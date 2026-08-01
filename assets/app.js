@@ -1,8 +1,9 @@
-import { rides } from '../data/rides.js';
+import { parks, rides } from '../data/rides.js';
 
 const state = {
   unit: 'in',
   heightInches: 40,
+  park: 'magic-kingdom',
   filter: 'all',
   requirementsOnly: false,
   childName: ''
@@ -10,13 +11,18 @@ const state = {
 
 const elements = {
   form: document.querySelector('#height-form'),
-  nameInput: document.querySelector('#child-name'),
-  pageTitle: document.querySelector('#page-title'),
   input: document.querySelector('#height-input'),
   unitLabel: document.querySelector('#unit-label'),
   conversion: document.querySelector('#conversion'),
+
   unitButtons: [...document.querySelectorAll('.unit-button')],
+  parkButtons: [...document.querySelectorAll('.park-button')],
   filterButtons: [...document.querySelectorAll('.filter-button')],
+
+  parkPill: document.querySelector('#park-pill'),
+  pageHeading: document.querySelector('#page-heading'),
+  resultsTitle: document.querySelector('#results-title'),
+
   requirementsOnly: document.querySelector('#height-requirements-only'),
   list: document.querySelector('#ride-list'),
   template: document.querySelector('#ride-template'),
@@ -61,6 +67,7 @@ function updateUrl() {
   const url = new URL(window.location.href);
   url.searchParams.set('height', rounded(state.heightInches));
   url.searchParams.set('unit', state.unit);
+  url.searchParams.set('park', state.park);
   if (state.childName) {
     url.searchParams.set('name', state.childName);
   } else {
@@ -74,9 +81,23 @@ function readUrl() {
   const unit = params.get('unit');
   const height = Number.parseFloat(params.get('height'));
   const childName = cleanName(params.get('name') || localStorage.getItem('rideHeightChildName') || '');
+  const park = params.get('park');
+
+  if (parks[park]) {
+    state.park = park;
+  }
   if (unit === 'cm' || unit === 'in') state.unit = unit;
   if (Number.isFinite(height) && height >= 0) state.heightInches = height;
   state.childName = childName;
+}
+
+function syncParkControls() {
+  elements.parkButtons.forEach(button => {
+    const active = button.dataset.park === state.park;
+
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
 }
 
 function formatRule(ride) {
@@ -98,10 +119,52 @@ function formatDetail(ride, status) {
 function render() {
   elements.list.replaceChildren();
 
-  const statuses = rides.map(ride => ({ ride, status: statusFor(ride) }));
+  const parkRides = rides.filter(ride => ride.park === state.park);
+
+  const statuses = parkRides.map(ride => ({
+    ride,
+    status: statusFor(ride)
+  }));
+
+  const activePark = parks[state.park];
+
+  const subject = state.childName
+      ? state.childName
+      : 'your child';
+
+  elements.parkPill.textContent = activePark.name;
+  elements.pageHeading.textContent =
+      `What can ${subject} ride at ${activePark.name}?`;
+  elements.resultsTitle.textContent =
+      `${activePark.name} attractions`;
+
+  elements.parkButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      state.park = button.dataset.park;
+
+      elements.parkButtons.forEach(candidate => {
+        const active = candidate === button;
+
+        candidate.classList.toggle('is-active', active);
+        candidate.setAttribute('aria-pressed', String(active));
+      });
+
+      updateUrl();
+      render();
+    });
+  });
+
+  document.title = `${activePark.name} Ride Height Checker`;
+
   const available = statuses.filter(({ status }) => status !== 'restricted').length;
-  const restricted = rides.length - available;
-  const nextThreshold = [...new Set(rides.map(ride => ride.minHeight).filter(height => height > state.heightInches))].sort((a, b) => a - b)[0];
+  const restricted = parkRides.length - available;
+  const nextThreshold = [
+    ...new Set(
+        parkRides
+            .map(ride => ride.minHeight)
+            .filter(height => height > state.heightInches)
+    )
+  ].sort((a, b) => a - b)[0];
 
   elements.availableCount.textContent = available;
   elements.restrictedCount.textContent = restricted;
@@ -131,7 +194,8 @@ function render() {
     elements.list.append(fragment);
   });
 
-  elements.visibleCount.textContent = `${visible.length} of ${rides.length} shown`;
+  elements.visibleCount.textContent =
+      `${visible.length} of ${parkRides.length} shown`;
   elements.empty.hidden = visible.length > 0;
   elements.list.hidden = visible.length === 0;
 
@@ -195,4 +259,5 @@ readUrl();
 elements.nameInput.value = state.childName;
 updateTitle();
 syncUnitControls();
+syncParkControls();
 render();

@@ -23,7 +23,7 @@
         <span class="brand-mark" aria-hidden="true">↕</span>
         <span>Tall Enough?</span>
       </a>
-      <span class="park-pill">Magic Kingdom</span>
+      <span class="park-pill" id="park-pill">Magic Kingdom</span>
     </div>
   </header>
 
@@ -75,12 +75,64 @@
       </div>
     </section>
 
-    <section class="shell controls" aria-label="Ride filters">
-      <div class="filter-buttons" role="group" aria-label="Eligibility filter">
-        <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">All</button>
-        <button type="button" class="filter-button" data-filter="available" aria-pressed="false">Can ride</button>
-        <button type="button" class="filter-button" data-filter="restricted" aria-pressed="false">Not yet</button>
+    <section class="shell controls" aria-label="Park and ride filters">
+      <div class="control-group">
+        <span class="control-label">Park</span>
+
+        <div class="filter-buttons" role="group" aria-label="Park filter">
+          <button
+                  type="button"
+                  class="park-button is-active"
+                  data-park="magic-kingdom"
+                  aria-pressed="true"
+          >
+            Magic Kingdom
+          </button>
+
+          <button
+                  type="button"
+                  class="park-button"
+                  data-park="epcot"
+                  aria-pressed="false"
+          >
+            EPCOT
+          </button>
+        </div>
       </div>
+
+      <div class="control-group">
+        <span class="control-label">Eligibility</span>
+
+        <div class="filter-buttons" role="group" aria-label="Eligibility filter">
+          <button
+                  type="button"
+                  class="filter-button is-active"
+                  data-filter="all"
+                  aria-pressed="true"
+          >
+            All
+          </button>
+
+          <button
+                  type="button"
+                  class="filter-button"
+                  data-filter="available"
+                  aria-pressed="false"
+          >
+            Can ride
+          </button>
+
+          <button
+                  type="button"
+                  class="filter-button"
+                  data-filter="restricted"
+                  aria-pressed="false"
+          >
+            Not yet
+          </button>
+        </div>
+      </div>
+
       <label class="checkbox-label">
         <input id="height-requirements-only" type="checkbox">
         <span>Only rides with height rules</span>
