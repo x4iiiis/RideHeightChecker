@@ -12,6 +12,7 @@ const state = {
 const elements = {
   form: document.querySelector('#height-form'),
   nameInput: document.querySelector('#child-name'),
+  parkSelect: document.querySelector('#park-select'),
   input: document.querySelector('#height-input'),
   unitLabel: document.querySelector('#unit-label'),
   conversion: document.querySelector('#conversion'),
@@ -93,6 +94,10 @@ function syncParkControls() {
     button.classList.toggle('is-active', active);
     button.setAttribute('aria-pressed', String(active));
   });
+
+  if (state.park !== 'all') {
+    elements.parkSelect.value = state.park;
+  }
 }
 
 function formatRule(ride) {
@@ -248,7 +253,7 @@ function render() {
 
     elements.list.append(fragment);
   });
-  
+
   elements.visibleCount.textContent =
       `${visible.length} of ${parkRides.length} shown`;
   elements.empty.hidden = visible.length > 0;
@@ -306,6 +311,14 @@ elements.parkButtons.forEach(button => {
     updateUrl();
     render();
   });
+});
+
+elements.parkSelect.addEventListener('change', event => {
+  state.park = event.target.value;
+
+  syncParkControls();
+  updateUrl();
+  render();
 });
 
 elements.filterButtons.forEach(button => {

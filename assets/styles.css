@@ -133,6 +133,47 @@ legend { width: 100%; margin-bottom: 16px; font-weight: 800; }
   margin-top: 0;
 }
 
+.park-filter {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.park-buttons-desktop {
+  display: flex;
+}
+
+.park-select {
+  display: none;
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .park-filter {
+    grid-template-columns: auto 1fr;
+    align-items: stretch;
+  }
+
+  .park-buttons-desktop {
+    display: none;
+  }
+
+  .park-select {
+    display: block;
+  }
+
+  .park-button-all {
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 26px; padding-top: 42px; }
   .controls { align-items: stretch; flex-direction: column; }

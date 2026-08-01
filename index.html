@@ -79,51 +79,60 @@
       <div class="control-group">
         <span class="control-label">Park</span>
 
-        <div class="filter-buttons" role="group" aria-label="Park filter">
+        <div class="park-filter">
           <button
                   type="button"
-                  class="park-button is-active"
+                  class="park-button park-button-all is-active"
                   data-park="all"
                   aria-pressed="true"
           >
             All Parks
           </button>
 
-          <button
-                  type="button"
-                  class="park-button is-active"
-                  data-park="magic-kingdom"
-                  aria-pressed="true"
-          >
-            Magic Kingdom
-          </button>
+          <div class="park-buttons-desktop">
+            <button
+                    type="button"
+                    class="park-button"
+                    data-park="magic-kingdom"
+                    aria-pressed="false"
+            >
+              Magic Kingdom
+            </button>
 
-          <button
-                  type="button"
-                  class="park-button"
-                  data-park="epcot"
-                  aria-pressed="false"
-          >
-            EPCOT
-          </button>
+            <button
+                    type="button"
+                    class="park-button"
+                    data-park="epcot"
+                    aria-pressed="false"
+            >
+              EPCOT
+            </button>
 
-          <button
-                  type="button"
-                  class="park-button"
-                  data-park="hollywood-studios"
-                  aria-pressed="false"
-          >
-            Hollywood Studios
-          </button>
+            <button
+                    type="button"
+                    class="park-button"
+                    data-park="hollywood-studios"
+                    aria-pressed="false"
+            >
+              Hollywood Studios
+            </button>
 
-          <button
-                  type="button"
-                  class="park-button"
-                  data-park="animal-kingdom"
-                  aria-pressed="false"
-          >
-            Animal Kingdom
-          </button>
+            <button
+                    type="button"
+                    class="park-button"
+                    data-park="animal-kingdom"
+                    aria-pressed="false"
+            >
+              Animal Kingdom
+            </button>
+          </div>
+
+          <select id="park-select" class="park-select" aria-label="Choose park">
+            <option value="magic-kingdom">Magic Kingdom</option>
+            <option value="epcot">EPCOT</option>
+            <option value="hollywood-studios">Hollywood Studios</option>
+            <option value="animal-kingdom">Animal Kingdom</option>
+          </select>
         </div>
       </div>
 
