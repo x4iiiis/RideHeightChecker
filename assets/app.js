@@ -143,9 +143,6 @@ function render() {
 
   elements.parkPill.textContent = activePark.shortName;
 
-  elements.resultsTitle.textContent =
-      `${activePark.name} attractions`;
-
   document.title = `${activePark.name} Ride Height Checker`;
 
   const available = statuses.filter(({ status }) => status !== 'restricted').length;
@@ -169,23 +166,89 @@ function render() {
     return true;
   });
 
-  visible.sort((a, b) => {
-    const order = { available: 0, conditional: 1, restricted: 2 };
-    return order[a.status] - order[b.status] || a.ride.minHeight - b.ride.minHeight || a.ride.name.localeCompare(b.ride.name);
-  });
+  if (state.park === 'all') {
+    const parkOrder = [
+      'magic-kingdom',
+      'epcot',
+      'hollywood-studios',
+      'animal-kingdom'
+    ];
+
+    visible.sort((a, b) => {
+      const parkDifference =
+          parkOrder.indexOf(a.ride.park) -
+          parkOrder.indexOf(b.ride.park);
+
+      if (parkDifference !== 0) {
+        return parkDifference;
+      }
+
+      const statusOrder = {
+        available: 0,
+        conditional: 1,
+        restricted: 2
+      };
+
+      return (
+          statusOrder[a.status] - statusOrder[b.status] ||
+          a.ride.minHeight - b.ride.minHeight ||
+          a.ride.name.localeCompare(b.ride.name)
+      );
+    });
+  } else {
+    visible.sort((a, b) => {
+      const statusOrder = {
+        available: 0,
+        conditional: 1,
+        restricted: 2
+      };
+
+      return (
+          statusOrder[a.status] - statusOrder[b.status] ||
+          a.ride.minHeight - b.ride.minHeight ||
+          a.ride.name.localeCompare(b.ride.name)
+      );
+    });
+  }
+
+  let previousPark = null;
 
   visible.forEach(({ ride, status }) => {
+    if (
+        state.park === 'all' &&
+        ride.park !== previousPark
+    ) {
+      const parkHeading = document.createElement('h3');
+
+      parkHeading.className = 'ride-park-heading';
+      parkHeading.textContent = parks[ride.park].name;
+
+      elements.list.append(parkHeading);
+
+      previousPark = ride.park;
+    }
+
     const fragment = elements.template.content.cloneNode(true);
     const card = fragment.querySelector('.ride-card');
+
     card.dataset.status = status;
-    fragment.querySelector('.status-icon').textContent = status === 'available' ? '✓' : status === 'conditional' ? '!' : '×';
+
+    fragment.querySelector('.status-icon').textContent =
+        status === 'available'
+            ? '✓'
+            : status === 'conditional'
+                ? '!'
+                : '×';
+
     fragment.querySelector('.ride-name').textContent = ride.name;
     fragment.querySelector('.land-badge').textContent = ride.land;
     fragment.querySelector('.ride-rule').textContent = formatRule(ride);
-    fragment.querySelector('.ride-detail').textContent = formatDetail(ride, status);
+    fragment.querySelector('.ride-detail').textContent =
+        formatDetail(ride, status);
+
     elements.list.append(fragment);
   });
-
+  
   elements.visibleCount.textContent =
       `${visible.length} of ${parkRides.length} shown`;
   elements.empty.hidden = visible.length > 0;
