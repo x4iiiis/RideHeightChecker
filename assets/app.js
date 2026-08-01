@@ -4,11 +4,14 @@ const state = {
   unit: 'in',
   heightInches: 40,
   filter: 'all',
-  requirementsOnly: false
+  requirementsOnly: false,
+  childName: ''
 };
 
 const elements = {
   form: document.querySelector('#height-form'),
+  nameInput: document.querySelector('#child-name'),
+  pageTitle: document.querySelector('#page-title'),
   input: document.querySelector('#height-input'),
   unitLabel: document.querySelector('#unit-label'),
   conversion: document.querySelector('#conversion'),
@@ -40,10 +43,29 @@ function statusFor(ride) {
   return 'available';
 }
 
+function cleanName(value) {
+  return value.trim().replace(/\s+/g, ' ').slice(0, 30);
+}
+
+function possessiveName(name) {
+  return /s$/i.test(name) ? `${name}'` : `${name}'s`;
+}
+
+function updateTitle() {
+  elements.pageTitle.textContent = state.childName
+    ? `What can ${possessiveName(state.childName)} ride at Magic Kingdom?`
+    : 'What can your child ride at Magic Kingdom?';
+}
+
 function updateUrl() {
   const url = new URL(window.location.href);
   url.searchParams.set('height', rounded(state.heightInches));
   url.searchParams.set('unit', state.unit);
+  if (state.childName) {
+    url.searchParams.set('name', state.childName);
+  } else {
+    url.searchParams.delete('name');
+  }
   history.replaceState({}, '', url);
 }
 
@@ -51,8 +73,10 @@ function readUrl() {
   const params = new URLSearchParams(window.location.search);
   const unit = params.get('unit');
   const height = Number.parseFloat(params.get('height'));
+  const childName = cleanName(params.get('name') || localStorage.getItem('rideHeightChildName') || '');
   if (unit === 'cm' || unit === 'in') state.unit = unit;
   if (Number.isFinite(height) && height >= 0) state.heightInches = height;
+  state.childName = childName;
 }
 
 function formatRule(ride) {
@@ -129,6 +153,12 @@ function syncUnitControls() {
 }
 
 elements.form.addEventListener('submit', event => event.preventDefault());
+elements.nameInput.addEventListener('input', event => {
+  state.childName = cleanName(event.target.value);
+  localStorage.setItem('rideHeightChildName', state.childName);
+  updateTitle();
+  updateUrl();
+});
 elements.input.addEventListener('input', event => {
   state.heightInches = parseHeight(event.target.value);
   updateUrl();
@@ -162,5 +192,7 @@ elements.requirementsOnly.addEventListener('change', event => {
 });
 
 readUrl();
+elements.nameInput.value = state.childName;
+updateTitle();
 syncUnitControls();
 render();

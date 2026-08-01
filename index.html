@@ -31,11 +31,16 @@
     <section class="hero shell">
       <div class="hero-copy">
         <p class="eyebrow">Florida ride height checker</p>
-        <h1>What can your child ride at Magic Kingdom?</h1>
+        <h1 id="page-title">What can your child ride at Magic Kingdom?</h1>
         <p class="intro">Enter their height for an instant, no-nonsense answer.</p>
       </div>
 
       <form class="height-card" id="height-form" novalidate>
+        <div class="name-field">
+          <label for="child-name">Child's name <span>(optional)</span></label>
+          <input id="child-name" name="name" type="text" maxlength="30" autocomplete="off" placeholder="e.g. Evie">
+        </div>
+
         <fieldset>
           <legend>Child's height</legend>
           <div class="unit-switch" role="group" aria-label="Height unit">
