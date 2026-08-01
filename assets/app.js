@@ -53,7 +53,7 @@ function possessiveName(name) {
 
 function updateTitle() {
   elements.pageTitle.textContent = state.childName
-    ? `What can ${possessiveName(state.childName)} ride at Magic Kingdom?`
+    ? `What can ${state.childName} ride at Magic Kingdom?`
     : 'What can your child ride at Magic Kingdom?';
 }
 
