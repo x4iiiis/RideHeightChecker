@@ -6,6 +6,14 @@ export const parks = {
   epcot: {
     name: 'EPCOT',
     shortName: 'EPCOT'
+  },
+  'hollywood-studios': {
+    name: 'Disney’s Hollywood Studios',
+    shortName: 'Hollywood Studios'
+  },
+  'animal-kingdom': {
+    name: 'Disney’s Animal Kingdom',
+    shortName: 'Animal Kingdom'
   }
 };
 
@@ -319,6 +327,194 @@ export const rides = [
     name: 'Turtle Talk With Crush',
     park: 'epcot',
     land: 'World Nature',
+    minHeight: 0
+  },
+  // Disney’s Hollywood Studios
+  {
+    name: 'Alien Swirling Saucers',
+    park: 'hollywood-studios',
+    land: 'Toy Story Land',
+    minHeight: 32
+  },
+  {
+    name: 'Beauty and the Beast – Live on Stage',
+    park: 'hollywood-studios',
+    land: 'Sunset Boulevard',
+    minHeight: 0
+  },
+  {
+    name: 'Disney Junior Play and Dance!',
+    park: 'hollywood-studios',
+    land: 'Animation Courtyard',
+    minHeight: 0
+  },
+  {
+    name: 'For the First Time in Forever: A Frozen Sing-Along Celebration',
+    park: 'hollywood-studios',
+    land: 'Echo Lake',
+    minHeight: 0
+  },
+  {
+    name: 'Indiana Jones Epic Stunt Spectacular!',
+    park: 'hollywood-studios',
+    land: 'Echo Lake',
+    minHeight: 0
+  },
+  {
+    name: 'Mickey & Minnie’s Runaway Railway',
+    park: 'hollywood-studios',
+    land: 'Hollywood Boulevard',
+    minHeight: 0
+  },
+  {
+    name: 'Millennium Falcon: Smugglers Run',
+    park: 'hollywood-studios',
+    land: 'Star Wars: Galaxy’s Edge',
+    minHeight: 38
+  },
+  {
+    name: 'Rock ’n’ Roller Coaster Starring The Muppets',
+    park: 'hollywood-studios',
+    land: 'Sunset Boulevard',
+    minHeight: 48
+  },
+  {
+    name: 'Slinky Dog Dash',
+    park: 'hollywood-studios',
+    land: 'Toy Story Land',
+    minHeight: 38
+  },
+  {
+    name: 'Star Tours – The Adventures Continue',
+    park: 'hollywood-studios',
+    land: 'Echo Lake',
+    minHeight: 40
+  },
+  {
+    name: 'Star Wars: Rise of the Resistance',
+    park: 'hollywood-studios',
+    land: 'Star Wars: Galaxy’s Edge',
+    minHeight: 40
+  },
+  {
+    name: 'The Twilight Zone Tower of Terror',
+    park: 'hollywood-studios',
+    land: 'Sunset Boulevard',
+    minHeight: 40
+  },
+  {
+    name: 'Toy Story Mania!',
+    park: 'hollywood-studios',
+    land: 'Toy Story Land',
+    minHeight: 0
+  },
+  {
+    name: 'Vacation Fun – An Original Animated Short with Mickey & Minnie',
+    park: 'hollywood-studios',
+    land: 'Echo Lake',
+    minHeight: 0
+  },
+  {
+    name: 'Walt Disney Presents',
+    park: 'hollywood-studios',
+    land: 'Animation Courtyard',
+    minHeight: 0
+  },
+  // Disney’s Animal Kingdom
+  {
+    name: 'Affection Section',
+    park: 'animal-kingdom',
+    land: 'Rafiki’s Planet Watch',
+    minHeight: 0
+  },
+  {
+    name: 'Avatar Flight of Passage',
+    park: 'animal-kingdom',
+    land: 'Pandora – The World of Avatar',
+    minHeight: 44
+  },
+  {
+    name: 'Conservation Station',
+    park: 'animal-kingdom',
+    land: 'Rafiki’s Planet Watch',
+    minHeight: 0
+  },
+  {
+    name: 'Discovery Island Trails',
+    park: 'animal-kingdom',
+    land: 'Discovery Island',
+    minHeight: 0
+  },
+  {
+    name: 'Expedition Everest – Legend of the Forbidden Mountain',
+    park: 'animal-kingdom',
+    land: 'Asia',
+    minHeight: 44
+  },
+  {
+    name: 'Feathered Friends in Flight!',
+    park: 'animal-kingdom',
+    land: 'Asia',
+    minHeight: 0
+  },
+  {
+    name: 'Festival of the Lion King',
+    park: 'animal-kingdom',
+    land: 'Africa',
+    minHeight: 0
+  },
+  {
+    name: 'Finding Nemo: The Big Blue... and Beyond!',
+    park: 'animal-kingdom',
+    land: 'DinoLand U.S.A.',
+    minHeight: 0
+  },
+  {
+    name: 'Gorilla Falls Exploration Trail',
+    park: 'animal-kingdom',
+    land: 'Africa',
+    minHeight: 0
+  },
+  {
+    name: 'Kali River Rapids',
+    park: 'animal-kingdom',
+    land: 'Asia',
+    minHeight: 38
+  },
+  {
+    name: 'Kilimanjaro Safaris',
+    park: 'animal-kingdom',
+    land: 'Africa',
+    minHeight: 0
+  },
+  {
+    name: 'Maharajah Jungle Trek',
+    park: 'animal-kingdom',
+    land: 'Asia',
+    minHeight: 0
+  },
+  {
+    name: 'Na’vi River Journey',
+    park: 'animal-kingdom',
+    land: 'Pandora – The World of Avatar',
+    minHeight: 0
+  },
+  {
+    name: 'The Oasis Exhibits',
+    park: 'animal-kingdom',
+    land: 'Oasis',
+    minHeight: 0
+  },
+  {
+    name: 'Wildlife Express Train',
+    park: 'animal-kingdom',
+    land: 'Africa',
+    minHeight: 0
+  },
+  {
+    name: 'Zootopia: Better Zoogether!',
+    park: 'animal-kingdom',
+    land: 'Discovery Island',
     minHeight: 0
   }
 ];
