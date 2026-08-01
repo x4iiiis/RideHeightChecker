@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Enter your child's height and instantly see which Magic Kingdom rides they are tall enough for.">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>Magic Kingdom Ride Height Checker</title>
+  <link rel="canonical" href="https://example.com/">
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- AdSense: add your publisher ID after approval.
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+  -->
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to results</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./" aria-label="Tall Enough home">
+        <span class="brand-mark" aria-hidden="true">↕</span>
+        <span>Tall Enough?</span>
+      </a>
+      <span class="park-pill">Magic Kingdom</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Florida ride height checker</p>
+        <h1>What can your child ride at Magic Kingdom?</h1>
+        <p class="intro">Enter their height for an instant, no-nonsense answer.</p>
+      </div>
+
+      <form class="height-card" id="height-form" novalidate>
+        <fieldset>
+          <legend>Child's height</legend>
+          <div class="unit-switch" role="group" aria-label="Height unit">
+            <button class="unit-button is-active" type="button" data-unit="in" aria-pressed="true">Inches</button>
+            <button class="unit-button" type="button" data-unit="cm" aria-pressed="false">Centimetres</button>
+          </div>
+
+          <div class="height-input-row">
+            <label class="sr-only" for="height-input">Height</label>
+            <input id="height-input" name="height" type="number" min="0" max="96" step="0.1" inputmode="decimal" value="40" autocomplete="off">
+            <span id="unit-label" class="unit-label">in</span>
+          </div>
+          <p id="conversion" class="conversion" aria-live="polite">40 in = 101.6 cm</p>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="shell summary-section" aria-live="polite">
+      <div class="summary-card">
+        <div>
+          <span class="summary-number" id="available-count">0</span>
+          <span class="summary-label">available now</span>
+        </div>
+        <div>
+          <span class="summary-number" id="restricted-count">0</span>
+          <span class="summary-label">not yet</span>
+        </div>
+        <div>
+          <span class="summary-number" id="next-height">—</span>
+          <span class="summary-label">next unlock</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell controls" aria-label="Ride filters">
+      <div class="filter-buttons" role="group" aria-label="Eligibility filter">
+        <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-button" data-filter="available" aria-pressed="false">Can ride</button>
+        <button type="button" class="filter-button" data-filter="restricted" aria-pressed="false">Not yet</button>
+      </div>
+      <label class="checkbox-label">
+        <input id="height-requirements-only" type="checkbox">
+        <span>Only rides with height rules</span>
+      </label>
+    </section>
+
+    <!-- Manual AdSense slot suggestion: insert after the controls, not above the primary tool. -->
+    <aside class="ad-slot" aria-label="Advertisement">
+      <span>Advertisement</span>
+      <!-- Paste a responsive AdSense ad unit here after approval. -->
+    </aside>
+
+    <section class="shell results-section" id="results">
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">Results</p>
+          <h2 id="results-title">Magic Kingdom attractions</h2>
+        </div>
+        <p id="visible-count" class="visible-count"></p>
+      </div>
+      <div id="ride-list" class="ride-list"></div>
+      <p id="empty-state" class="empty-state" hidden>No attractions match those filters.</p>
+    </section>
+
+    <section class="shell info-card">
+      <h2>Measure before you travel</h2>
+      <p>Park staff make the final decision at each attraction. Shoes, posture and measuring equipment can all affect the result, so treat this as a planning guide rather than a guarantee.</p>
+      <p class="verified">Ride data checked against Walt Disney World's official height-requirements page on 1 August 2026.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>Independent planning tool. Not affiliated with or endorsed by Disney.</p>
+      <nav aria-label="Footer">
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:hello@example.com">Report an error</a>
+      </nav>
+    </div>
+  </footer>
+
+  <template id="ride-template">
+    <article class="ride-card">
+      <div class="status-icon" aria-hidden="true"></div>
+      <div class="ride-content">
+        <div class="ride-title-row">
+          <h3 class="ride-name"></h3>
+          <span class="land-badge"></span>
+        </div>
+        <p class="ride-rule"></p>
+        <p class="ride-detail"></p>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="assets/app.js"></script>
+</body>
+</html>
