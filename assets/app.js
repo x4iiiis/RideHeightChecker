@@ -76,12 +76,12 @@ function readUrl() {
   const unit = params.get('unit');
   const height = Number.parseFloat(params.get('height'));
   const childName = cleanName(params.get('name') || localStorage.getItem('rideHeightChildName') || '');
-  const park = params.get('park');
+  const defaultPark = document.body.dataset.defaultPark;
 
-  if (parks[park]) {
-    state.park = park;
-  } else if (parks[document.body.dataset.defaultPark]) {
-    state.park = document.body.dataset.defaultPark;
+  // The static route is authoritative: /animal-kingdom/ must always open
+  // with Animal Kingdom selected, regardless of an old ?park= query value.
+  if (parks[defaultPark]) {
+    state.park = defaultPark;
   }
   if (unit === 'cm' || unit === 'in') state.unit = unit;
   if (Number.isFinite(height) && height >= 0) state.heightInches = height;
