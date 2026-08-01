@@ -149,6 +149,21 @@ legend { width: 100%; margin-bottom: 16px; font-weight: 800; }
 .park-button.is-active { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(79,70,229,.24); }
 .control-group-wide { min-width: 0; }
 
+.site-credit {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.site-credit a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-credit a:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 26px; padding-top: 42px; }
