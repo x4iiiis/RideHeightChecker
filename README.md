@@ -18,3 +18,16 @@ The site includes an ad placeholder, privacy page, `ads.txt.example`, favicon se
 ## Data
 
 Ride data lives in `data/rides.js`. Height requirements should be checked regularly against official park sources.
+
+## SEO landing pages
+
+The project now includes separate static entry pages for each Walt Disney World park:
+
+- `/magic-kingdom/`
+- `/epcot/`
+- `/hollywood-studios/`
+- `/animal-kingdom/`
+
+All pages share the same `assets/app.js`, `assets/styles.css`, and `data/rides.js` files. Each page sets its initial park using `data-default-park` on the `<body>` element and contains unique title, description, canonical URL, social metadata, structured data, heading copy, and supporting content.
+
+The park controls navigate between these crawlable pages while preserving the entered height, unit, and optional child name in the query string.

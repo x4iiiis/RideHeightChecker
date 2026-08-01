@@ -3,7 +3,7 @@ import { parks, rides } from '../data/rides.js';
 const state = {
   unit: 'in',
   heightInches: 40,
-  park: 'all',
+  park: document.body.dataset.defaultPark || 'all',
   filter: 'all',
   requirementsOnly: false,
   childName: ''
@@ -62,7 +62,7 @@ function updateUrl() {
   const url = new URL(window.location.href);
   url.searchParams.set('height', rounded(state.heightInches));
   url.searchParams.set('unit', state.unit);
-  url.searchParams.set('park', state.park);
+  url.searchParams.delete('park');
   if (state.childName) {
     url.searchParams.set('name', state.childName);
   } else {
@@ -80,6 +80,8 @@ function readUrl() {
 
   if (parks[park]) {
     state.park = park;
+  } else if (parks[document.body.dataset.defaultPark]) {
+    state.park = document.body.dataset.defaultPark;
   }
   if (unit === 'cm' || unit === 'in') state.unit = unit;
   if (Number.isFinite(height) && height >= 0) state.heightInches = height;
@@ -309,13 +311,32 @@ elements.unitButtons.forEach(button => {
   });
 });
 
+function siteBasePath() {
+  const knownSlugs = ['magic-kingdom', 'epcot', 'hollywood-studios', 'animal-kingdom'];
+  const parts = window.location.pathname.split('/').filter(Boolean);
+
+  if (knownSlugs.includes(parts.at(-1))) {
+    parts.pop();
+  }
+
+  return `/${parts.join('/')}${parts.length ? '/' : ''}`;
+}
+
+function parkUrl(park) {
+  const base = siteBasePath();
+  const path = park === 'all' ? base : `${base}${park}/`;
+  const url = new URL(path, window.location.origin);
+
+  url.searchParams.set('height', rounded(state.heightInches));
+  url.searchParams.set('unit', state.unit);
+  if (state.childName) url.searchParams.set('name', state.childName);
+
+  return url;
+}
+
 elements.parkButtons.forEach(button => {
   button.addEventListener('click', () => {
-    state.park = button.dataset.park;
-
-    syncParkControls();
-    updateUrl();
-    render();
+    window.location.assign(parkUrl(button.dataset.park));
   });
 });
 

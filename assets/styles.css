@@ -187,3 +187,29 @@ legend { width: 100%; margin-bottom: 16px; font-weight: 800; }
   .park-filter { margin-inline: -2px; }
   .park-button { padding: 10px 13px; }
 }
+
+.park-page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1.25rem 0;
+}
+
+.park-page-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.park-page-links a:hover,
+.park-page-links a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
