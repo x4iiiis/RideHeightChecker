@@ -1,4 +1,8 @@
 export const parks = {
+  all: {
+    name: 'All Florida Parks',
+    shortName: 'All Parks'
+  },
   'magic-kingdom': {
     name: 'Magic Kingdom',
     shortName: 'Magic Kingdom'

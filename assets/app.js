@@ -3,7 +3,7 @@ import { parks, rides } from '../data/rides.js';
 const state = {
   unit: 'in',
   heightInches: 40,
-  park: 'magic-kingdom',
+  park: 'all',
   filter: 'all',
   requirementsOnly: false,
   childName: ''
@@ -114,7 +114,9 @@ function formatDetail(ride, status) {
 function render() {
   elements.list.replaceChildren();
 
-  const parkRides = rides.filter(ride => ride.park === state.park);
+  const parkRides = state.park === 'all'
+      ? rides
+      : rides.filter(ride => ride.park === state.park);
 
   const statuses = parkRides.map(ride => ({
     ride,
@@ -130,6 +132,17 @@ function render() {
   elements.parkPill.textContent = activePark.name;
   elements.pageHeading.textContent =
       `What can ${subject} ride at ${activePark.name}?`;
+
+  elements.pageHeading.textContent = state.park === 'all'
+      ? `What can ${subject} ride in Florida?`
+      : `What can ${subject} ride at ${activePark.name}?`;
+
+  elements.resultsTitle.textContent = state.park === 'all'
+      ? 'All Florida attractions'
+      : `${activePark.name} attractions`;
+
+  elements.parkPill.textContent = activePark.shortName;
+
   elements.resultsTitle.textContent =
       `${activePark.name} attractions`;
 
