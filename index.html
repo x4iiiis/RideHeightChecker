@@ -3,60 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Enter your child's height and instantly see which Magic Kingdom rides they are tall enough for.">
-  <meta name="theme-color" content="#f7f8fc">
-  <title>
-    Florida Ride Height Checker | Find Every Ride Your Child Can Ride
-  </title>
-
-  <meta
-          name="description"
-          content="Instantly check which rides your child is tall enough for across Walt Disney World, Universal Orlando, SeaWorld Orlando and Busch Gardens Tampa."
-  >
-
+  <title>Florida Ride Height Checker | Disney World Rides by Height</title>
+  <meta name="description" content="Enter your child’s height and instantly see which rides they can ride across Magic Kingdom, EPCOT, Hollywood Studios and Animal Kingdom.">
+  <meta name="theme-color" content="#5B5CEB">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://x4iiiis.github.io/RideHeightChecker/">
 
-  <meta property="og:title"
-        content="Florida Ride Height Checker">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-  <meta property="og:description"
-        content="Find every Florida theme park ride your child can ride.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Florida Ride Height Checker">
+  <meta property="og:title" content="Florida Ride Height Checker">
+  <meta property="og:description" content="Find every Walt Disney World ride your child is tall enough for.">
+  <meta property="og:url" content="https://x4iiiis.github.io/RideHeightChecker/">
+  <meta property="og:image" content="https://x4iiiis.github.io/RideHeightChecker/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Florida Ride Height Checker">
+  <meta name="twitter:description" content="Find every Walt Disney World ride your child is tall enough for.">
+  <meta name="twitter:image" content="https://x4iiiis.github.io/RideHeightChecker/og-image.png">
 
-  <meta property="og:type"
-        content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Florida Ride Height Checker",
+    "url": "https://x4iiiis.github.io/RideHeightChecker/",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Any",
+    "isAccessibleForFree": true,
+    "description": "A free browser-based tool for checking Walt Disney World ride height requirements.",
+    "author": {"@type": "Person", "name": "Ryan O'Flaherty"}
+  }
+  </script>
 
-  <meta property="og:image"
-        content="https://x4iiiis.github.io/RideHeightChecker/images/og.jpg">
-
-  <meta property="og:url"
-        content="https://x4iiiis.github.io/RideHeightChecker/">
-  <link rel="canonical" href="https://x4iiiis.github.io/RideHeightChecker">
   <link rel="stylesheet" href="assets/styles.css">
-
-  <!-- AdSense: add your publisher ID after approval.
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-          crossorigin="anonymous"></script>
-  -->
+  <!-- Add the AdSense script here after approval. -->
 </head>
 <body>
   <a class="skip-link" href="#results">Skip to results</a>
 
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="./" aria-label="Tall Enough home">
-        <span class="brand-mark" aria-hidden="true">↕</span>
-        <span>Tall Enough?</span>
+      <a class="brand" href="./" aria-label="Florida Ride Height Checker home">
+        <img class="brand-logo" src="favicon.svg" alt="" width="40" height="40">
+        <span>Florida Ride Height Checker</span>
       </a>
-      <span class="park-pill" id="park-pill">Magic Kingdom</span>
+      <span class="park-pill" id="park-pill">All Parks</span>
     </div>
   </header>
 
   <main>
     <section class="hero shell">
       <div class="hero-copy">
-        <p class="eyebrow">Florida ride height checker</p>
-        <h1 id="page-heading">What can your child ride at Magic Kingdom?</h1>
-        <p class="intro">Enter their height for an instant, no-nonsense answer.</p>
+        <p class="eyebrow">Walt Disney World ride height checker</p>
+        <h1>Find every ride your child can ride.</h1>
+        <p class="intro" id="page-heading">Enter their height for an instant answer across all four Walt Disney World theme parks.</p>
+        <ul class="trust-list" aria-label="Key features">
+          <li>Official park height requirements</li>
+          <li>Instant, private browser calculation</li>
+          <li>Built for phones in the parks</li>
+        </ul>
       </div>
 
       <form class="height-card" id="height-form" novalidate>
@@ -84,105 +96,30 @@
 
     <section class="shell summary-section" aria-live="polite">
       <div class="summary-card">
-        <div>
-          <span class="summary-number" id="available-count">0</span>
-          <span class="summary-label">available now</span>
-        </div>
-        <div>
-          <span class="summary-number" id="restricted-count">0</span>
-          <span class="summary-label">not yet</span>
-        </div>
-        <div>
-          <span class="summary-number" id="next-height">—</span>
-          <span class="summary-label">next unlock</span>
-        </div>
+        <div><span class="summary-number" id="available-count">0</span><span class="summary-label">available now</span></div>
+        <div><span class="summary-number" id="restricted-count">0</span><span class="summary-label">not yet</span></div>
+        <div><span class="summary-number" id="next-height">—</span><span class="summary-label">next unlock</span></div>
       </div>
     </section>
 
     <section class="shell controls" aria-label="Park and ride filters">
-      <div class="control-group">
+      <div class="control-group control-group-wide">
         <span class="control-label">Park</span>
-
-        <div class="park-filter">
-          <button
-                  type="button"
-                  class="park-button park-button-all is-active"
-                  data-park="all"
-                  aria-pressed="true"
-          >
-            All Parks
-          </button>
-
-          <div class="park-buttons-desktop">
-            <button
-                    type="button"
-                    class="park-button"
-                    data-park="magic-kingdom"
-                    aria-pressed="false"
-            >
-              Magic Kingdom
-            </button>
-
-            <button
-                    type="button"
-                    class="park-button"
-                    data-park="epcot"
-                    aria-pressed="false"
-            >
-              EPCOT
-            </button>
-
-            <button
-                    type="button"
-                    class="park-button"
-                    data-park="hollywood-studios"
-                    aria-pressed="false"
-            >
-              Hollywood Studios
-            </button>
-
-            <button
-                    type="button"
-                    class="park-button"
-                    data-park="animal-kingdom"
-                    aria-pressed="false"
-            >
-              Animal Kingdom
-            </button>
-          </div>
+        <div class="park-filter" role="group" aria-label="Park filter">
+          <button type="button" class="park-button is-active" data-park="all" aria-pressed="true">All Parks</button>
+          <button type="button" class="park-button" data-park="magic-kingdom" aria-pressed="false">Magic Kingdom</button>
+          <button type="button" class="park-button" data-park="epcot" aria-pressed="false">EPCOT</button>
+          <button type="button" class="park-button" data-park="hollywood-studios" aria-pressed="false">Hollywood Studios</button>
+          <button type="button" class="park-button" data-park="animal-kingdom" aria-pressed="false">Animal Kingdom</button>
         </div>
       </div>
 
       <div class="control-group">
         <span class="control-label">Eligibility</span>
-
         <div class="filter-buttons" role="group" aria-label="Eligibility filter">
-          <button
-                  type="button"
-                  class="filter-button is-active"
-                  data-filter="all"
-                  aria-pressed="true"
-          >
-            All
-          </button>
-
-          <button
-                  type="button"
-                  class="filter-button"
-                  data-filter="available"
-                  aria-pressed="false"
-          >
-            Can ride
-          </button>
-
-          <button
-                  type="button"
-                  class="filter-button"
-                  data-filter="restricted"
-                  aria-pressed="false"
-          >
-            Not yet
-          </button>
+          <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-button" data-filter="available" aria-pressed="false">Can ride</button>
+          <button type="button" class="filter-button" data-filter="restricted" aria-pressed="false">Not yet</button>
         </div>
       </div>
 
@@ -192,52 +129,52 @@
       </label>
     </section>
 
-    <!-- Manual AdSense slot suggestion: insert after the controls, not above the primary tool. -->
-    <aside class="ad-slot" aria-label="Advertisement">
-      <span>Advertisement</span>
-      <!-- Paste a responsive AdSense ad unit here after approval. -->
-    </aside>
+    <aside class="ad-slot" aria-label="Advertisement"><span>Advertisement</span></aside>
 
     <section class="shell results-section" id="results">
       <div class="results-heading">
-        <div>
-          <p class="eyebrow">Results</p>
-          <h2 id="results-title">Magic Kingdom attractions</h2>
-        </div>
+        <div><p class="eyebrow">Results</p><h2 id="results-title">All Walt Disney World attractions</h2></div>
         <p id="visible-count" class="visible-count"></p>
       </div>
       <div id="ride-list" class="ride-list"></div>
       <p id="empty-state" class="empty-state" hidden>No attractions match those filters.</p>
     </section>
 
-    <section class="shell info-card">
-      <h2>Measure before you travel</h2>
-      <p>Park staff make the final decision at each attraction. Shoes, posture and measuring equipment can all affect the result, so treat this as a planning guide rather than a guarantee.</p>
-      <p class="verified">Ride data checked against Walt Disney World's official height-requirements page on 1 August 2026.</p>
+    <section class="shell seo-content" aria-labelledby="about-checker">
+      <h2 id="about-checker">Walt Disney World rides by height</h2>
+      <p>This free ride height checker compares a child’s height with attraction requirements across Magic Kingdom, EPCOT, Disney’s Hollywood Studios and Disney’s Animal Kingdom. Choose a park or check the complete Walt Disney World attraction list in one place.</p>
+      <p>Height is only one part of attraction eligibility. Park staff make the final decision at the entrance, and requirements can change. Measure children in the shoes they will wear in the parks and confirm important restrictions with the official attraction page before travelling.</p>
+      <div class="height-guide-links" aria-label="Popular height guides">
+        <a href="?height=32&unit=in&park=all">32-inch rides</a>
+        <a href="?height=35&unit=in&park=all">35-inch rides</a>
+        <a href="?height=38&unit=in&park=all">38-inch rides</a>
+        <a href="?height=40&unit=in&park=all">40-inch rides</a>
+        <a href="?height=42&unit=in&park=all">42-inch rides</a>
+        <a href="?height=44&unit=in&park=all">44-inch rides</a>
+        <a href="?height=48&unit=in&park=all">48-inch rides</a>
+      </div>
+      <p class="verified">Ride data last checked against official Walt Disney World guidance on 1 August 2026.</p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <p>Independent planning tool. Not affiliated endorsed.</p>
+      <div><strong>Florida Ride Height Checker</strong><p>Independent family trip-planning tool.</p></div>
       <nav aria-label="Footer">
         <a href="about.html">About</a>
         <a href="privacy.html">Privacy</a>
         <a href="mailto:ryan@x4iiiis.com">Report an error</a>
       </nav>
     </div>
+    <p class="footer-disclaimer shell">Not affiliated with or endorsed by Disney or any theme park operator. Final ride eligibility is determined by attraction staff.</p>
   </footer>
 
   <template id="ride-template">
     <article class="ride-card">
       <div class="status-icon" aria-hidden="true"></div>
       <div class="ride-content">
-        <div class="ride-title-row">
-          <h3 class="ride-name"></h3>
-          <span class="land-badge"></span>
-        </div>
-        <p class="ride-rule"></p>
-        <p class="ride-detail"></p>
+        <div class="ride-title-row"><h3 class="ride-name"></h3><span class="land-badge"></span></div>
+        <p class="ride-rule"></p><p class="ride-detail"></p>
       </div>
     </article>
   </template>

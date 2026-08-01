@@ -12,7 +12,6 @@ const state = {
 const elements = {
   form: document.querySelector('#height-form'),
   nameInput: document.querySelector('#child-name'),
-  parkSelect: document.querySelector('#park-select'),
   input: document.querySelector('#height-input'),
   unitLabel: document.querySelector('#unit-label'),
   conversion: document.querySelector('#conversion'),
@@ -90,14 +89,26 @@ function readUrl() {
 function syncParkControls() {
   elements.parkButtons.forEach(button => {
     const active = button.dataset.park === state.park;
-
     button.classList.toggle('is-active', active);
     button.setAttribute('aria-pressed', String(active));
   });
+}
 
-  if (state.park !== 'all') {
-    elements.parkSelect.value = state.park;
-  }
+function updateMetadata(activePark) {
+  const isAll = state.park === 'all';
+  const title = isAll
+    ? 'Florida Ride Height Checker | Disney World Rides by Height'
+    : `${activePark.name} Ride Height Checker | Rides by Height`;
+  const description = isAll
+    ? 'Enter your child’s height and instantly see which Walt Disney World rides they can ride.'
+    : `Check which ${activePark.name} attractions your child is tall enough to ride.`;
+
+  document.title = title;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', description);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
+  document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
+  document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description);
 }
 
 function formatRule(ride) {
@@ -134,21 +145,16 @@ function render() {
       ? state.childName
       : 'your child';
 
-  elements.parkPill.textContent = activePark.name;
-  elements.pageHeading.textContent =
-      `What can ${subject} ride at ${activePark.name}?`;
-
   elements.pageHeading.textContent = state.park === 'all'
-      ? `What can ${subject} ride in Florida?`
-      : `What can ${subject} ride at ${activePark.name}?`;
+      ? `See what ${subject} can ride across all four Disney World parks.`
+      : `See what ${subject} can ride at ${activePark.name}.`;
 
   elements.resultsTitle.textContent = state.park === 'all'
-      ? 'All Florida attractions'
+      ? 'All Walt Disney World attractions'
       : `${activePark.name} attractions`;
 
   elements.parkPill.textContent = activePark.shortName;
-
-  document.title = `${activePark.name} Ride Height Checker`;
+  updateMetadata(activePark);
 
   const available = statuses.filter(({ status }) => status !== 'restricted').length;
   const restricted = parkRides.length - available;
@@ -313,13 +319,6 @@ elements.parkButtons.forEach(button => {
   });
 });
 
-elements.parkSelect.addEventListener('change', event => {
-  state.park = event.target.value;
-
-  syncParkControls();
-  updateUrl();
-  render();
-});
 
 elements.filterButtons.forEach(button => {
   button.addEventListener('click', () => {
