@@ -11,6 +11,7 @@ const state = {
 
 const elements = {
   form: document.querySelector('#height-form'),
+  nameInput: document.querySelector('#child-name'),
   input: document.querySelector('#height-input'),
   unitLabel: document.querySelector('#unit-label'),
   conversion: document.querySelector('#conversion'),
@@ -55,12 +56,6 @@ function cleanName(value) {
 
 function possessiveName(name) {
   return /s$/i.test(name) ? `${name}'` : `${name}'s`;
-}
-
-function updateTitle() {
-  elements.pageTitle.textContent = state.childName
-    ? `What can ${state.childName} ride at Magic Kingdom?`
-    : 'What can your child ride at Magic Kingdom?';
 }
 
 function updateUrl() {
@@ -138,22 +133,6 @@ function render() {
   elements.resultsTitle.textContent =
       `${activePark.name} attractions`;
 
-  elements.parkButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      state.park = button.dataset.park;
-
-      elements.parkButtons.forEach(candidate => {
-        const active = candidate === button;
-
-        candidate.classList.toggle('is-active', active);
-        candidate.setAttribute('aria-pressed', String(active));
-      });
-
-      updateUrl();
-      render();
-    });
-  });
-
   document.title = `${activePark.name} Ride Height Checker`;
 
   const available = statuses.filter(({ status }) => status !== 'restricted').length;
@@ -219,9 +198,14 @@ function syncUnitControls() {
 elements.form.addEventListener('submit', event => event.preventDefault());
 elements.nameInput.addEventListener('input', event => {
   state.childName = cleanName(event.target.value);
-  localStorage.setItem('rideHeightChildName', state.childName);
-  updateTitle();
+
+  localStorage.setItem(
+      'rideHeightChildName',
+      state.childName
+  );
+
   updateUrl();
+  render();
 });
 elements.input.addEventListener('input', event => {
   state.heightInches = parseHeight(event.target.value);
@@ -233,6 +217,16 @@ elements.unitButtons.forEach(button => {
   button.addEventListener('click', () => {
     state.unit = button.dataset.unit;
     syncUnitControls();
+    updateUrl();
+    render();
+  });
+});
+
+elements.parkButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    state.park = button.dataset.park;
+
+    syncParkControls();
     updateUrl();
     render();
   });
@@ -257,7 +251,6 @@ elements.requirementsOnly.addEventListener('change', event => {
 
 readUrl();
 elements.nameInput.value = state.childName;
-updateTitle();
 syncUnitControls();
 syncParkControls();
 render();
