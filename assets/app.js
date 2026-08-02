@@ -45,7 +45,10 @@ function parseHeight(value) {
 }
 
 function statusFor(ride) {
-  if (state.heightInches < ride.minHeight) return 'restricted';
+  if (ride.maxHeight && state.heightInches > ride.maxHeight) return 'conditional';
+  if (state.heightInches < ride.minHeight) {
+    return ride.underMinimumAlternative ? 'conditional' : 'restricted';
+  }
   if (ride.independentHeight && state.heightInches < ride.independentHeight) return 'conditional';
   return 'available';
 }
@@ -99,10 +102,10 @@ function syncParkControls() {
 function updateMetadata(activePark) {
   const isAll = state.park === 'all';
   const title = isAll
-    ? 'Florida Ride Height Checker | Disney World Rides by Height'
+    ? 'Florida Ride Height Checker | Disney & Universal Rides by Height'
     : `${activePark.name} Ride Height Checker | Rides by Height`;
   const description = isAll
-    ? 'Enter your child’s height and instantly see which Walt Disney World rides they can ride.'
+    ? 'Enter your child’s height and instantly see which Disney World and Universal Orlando attractions they can ride.'
     : `Check which ${activePark.name} attractions your child is tall enough to ride.`;
 
   document.title = title;
@@ -125,7 +128,11 @@ function formatDetail(ride, status) {
     if (ride.independentHeight) return 'Tall enough to drive independently.';
     return `Meets the requirement by ${rounded(state.heightInches - ride.minHeight)} in.`;
   }
-  if (status === 'conditional') return ride.conditionalText;
+  if (status === 'conditional') {
+    if (ride.maxHeight && state.heightInches > ride.maxHeight) return ride.overMaxText;
+    if (state.heightInches < ride.minHeight && ride.underMinimumAlternative) return ride.underMinimumAlternative;
+    return ride.conditionalText;
+  }
   return `${rounded(ride.minHeight - state.heightInches)} in to go.`;
 }
 
@@ -148,11 +155,11 @@ function render() {
       : 'your child';
 
   elements.pageHeading.textContent = state.park === 'all'
-      ? `See what ${subject} can ride across all four Disney World parks.`
+      ? `See what ${subject} can ride across Disney World and Universal Orlando.`
       : `See what ${subject} can ride at ${activePark.name}.`;
 
   elements.resultsTitle.textContent = state.park === 'all'
-      ? 'All Walt Disney World attractions'
+      ? 'All Disney World and Universal Orlando attractions'
       : `${activePark.name} attractions`;
 
   elements.parkPill.textContent = activePark.shortName;
@@ -184,7 +191,10 @@ function render() {
       'magic-kingdom',
       'epcot',
       'hollywood-studios',
-      'animal-kingdom'
+      'animal-kingdom',
+      'universal-studios',
+      'islands-of-adventure',
+      'epic-universe'
     ];
 
     visible.sort((a, b) => {
@@ -312,7 +322,7 @@ elements.unitButtons.forEach(button => {
 });
 
 function siteBasePath() {
-  const knownSlugs = ['magic-kingdom', 'epcot', 'hollywood-studios', 'animal-kingdom'];
+  const knownSlugs = ['magic-kingdom', 'epcot', 'hollywood-studios', 'animal-kingdom', 'universal-studios', 'islands-of-adventure', 'epic-universe'];
   const parts = window.location.pathname.split('/').filter(Boolean);
 
   if (knownSlugs.includes(parts.at(-1))) {

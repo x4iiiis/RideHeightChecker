@@ -293,3 +293,15 @@ legend { width: 100%; margin-bottom: 16px; font-weight: 800; }
   border-color: var(--accent);
   color: var(--accent);
 }
+
+
+/* Resort-grouped park navigation */
+.park-filter { align-items: flex-end; }
+.resort-filter-group { flex: 0 0 auto; display: grid; gap: 5px; }
+.resort-filter-label { padding-left: 4px; color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.resort-filter-buttons { display: flex; gap: 5px; }
+@media (max-width: 700px) {
+  .park-filter { align-items: flex-end; }
+  .resort-filter-group { gap: 4px; }
+  .resort-filter-label { font-size: .62rem; }
+}

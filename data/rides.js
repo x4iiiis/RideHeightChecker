@@ -1,23 +1,43 @@
 export const parks = {
   all: {
     name: 'All Florida Parks',
-    shortName: 'All Parks'
+    shortName: 'All Parks',
+    resort: 'all'
   },
   'magic-kingdom': {
     name: 'Magic Kingdom',
-    shortName: 'Magic Kingdom'
+    shortName: 'Magic Kingdom',
+    resort: 'disney'
   },
   epcot: {
     name: 'EPCOT',
-    shortName: 'EPCOT'
+    shortName: 'EPCOT',
+    resort: 'disney'
   },
   'hollywood-studios': {
     name: 'Disney’s Hollywood Studios',
-    shortName: 'Hollywood Studios'
+    shortName: 'Hollywood Studios',
+    resort: 'disney'
   },
   'animal-kingdom': {
     name: 'Disney’s Animal Kingdom',
-    shortName: 'Animal Kingdom'
+    shortName: 'Animal Kingdom',
+    resort: 'disney'
+  },
+  'universal-studios': {
+    name: 'Universal Studios Florida',
+    shortName: 'Universal Studios',
+    resort: 'universal'
+  },
+  'islands-of-adventure': {
+    name: 'Universal Islands of Adventure',
+    shortName: 'Islands of Adventure',
+    resort: 'universal'
+  },
+  'epic-universe': {
+    name: 'Universal Epic Universe',
+    shortName: 'Epic Universe',
+    resort: 'universal'
   }
 };
 
@@ -521,4 +541,71 @@ export const rides = [
     land: 'Discovery Island',
     minHeight: 0
   }
+,
+  // Universal Studios Florida
+  { name: 'Despicable Me Minion Mayhem', park: 'universal-studios', land: 'Minion Land', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.', underMinimumAlternative: 'May experience the attraction from an adjacent stationary seat.' },
+  { name: 'Illumination’s Villain-Con Minion Blast', park: 'universal-studios', land: 'Minion Land', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in. No hand-held infants.' },
+  { name: 'TRANSFORMERS: The Ride-3D', park: 'universal-studios', land: 'New York', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Race Through New York Starring Jimmy Fallon', park: 'universal-studios', land: 'New York', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Revenge of the Mummy', park: 'universal-studios', land: 'New York', minHeight: 48 },
+  { name: 'The Blues Brothers Show', park: 'universal-studios', land: 'New York', minHeight: 0 },
+  { name: 'Fast & Furious – Supercharged', park: 'universal-studios', land: 'San Francisco', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Hogwarts Express – King’s Cross Station', park: 'universal-studios', land: 'Diagon Alley', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in. Park-to-Park admission is required.' },
+  { name: 'Harry Potter and the Escape from Gringotts', park: 'universal-studios', land: 'Diagon Alley', minHeight: 42, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'MEN IN BLACK Alien Attack', park: 'universal-studios', land: 'World Expo', minHeight: 42, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'The Simpsons Ride', park: 'universal-studios', land: 'Springfield', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Kang & Kodos’ Twirl ’n’ Hurl', park: 'universal-studios', land: 'Springfield', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in.' },
+  { name: 'DreamWorks Imagination Celebration', park: 'universal-studios', land: 'DreamWorks Land', minHeight: 0 },
+  { name: 'Shrek’s Swamp for Little Ogres', park: 'universal-studios', land: 'DreamWorks Land', minHeight: 0 },
+  { name: 'Mama Luna Feline Fiesta', park: 'universal-studios', land: 'DreamWorks Land', minHeight: 0 },
+  { name: 'King Harold’s Swamp Symphony', park: 'universal-studios', land: 'DreamWorks Land', minHeight: 0 },
+  { name: 'Trolls Trollercoaster', park: 'universal-studios', land: 'DreamWorks Land', minHeight: 36, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Po’s Kung Fu Training Camp', park: 'universal-studios', land: 'DreamWorks Land', minHeight: 0 },
+  { name: 'Po Live!', park: 'universal-studios', land: 'DreamWorks Land', minHeight: 0 },
+  { name: 'Animal Actors On Location!', park: 'universal-studios', land: 'Hollywood', minHeight: 0 },
+  { name: 'E.T. Adventure', park: 'universal-studios', land: 'Hollywood', minHeight: 34, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Universal Orlando’s Horror Make-Up Show', park: 'universal-studios', land: 'Hollywood', minHeight: 0 },
+  { name: 'The Bourne Stuntacular', park: 'universal-studios', land: 'Hollywood', minHeight: 0 },
+
+  // Universal Islands of Adventure
+  { name: 'The High in the Sky Seuss Trolley Train Ride!', park: 'islands-of-adventure', land: 'Seuss Landing', minHeight: 36, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Caro-Seuss-el', park: 'islands-of-adventure', land: 'Seuss Landing', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in.' },
+  { name: 'One Fish, Two Fish, Red Fish, Blue Fish', park: 'islands-of-adventure', land: 'Seuss Landing', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in.' },
+  { name: 'The Cat in the Hat', park: 'islands-of-adventure', land: 'Seuss Landing', minHeight: 36, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'If I Ran The Zoo', park: 'islands-of-adventure', land: 'Seuss Landing', minHeight: 0 },
+  { name: 'Harry Potter and the Forbidden Journey', park: 'islands-of-adventure', land: 'Hogsmeade', minHeight: 48 },
+  { name: 'Flight of the Hippogriff', park: 'islands-of-adventure', land: 'Hogsmeade', minHeight: 36, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Hagrid’s Magical Creatures Motorbike Adventure', park: 'islands-of-adventure', land: 'Hogsmeade', minHeight: 48 },
+  { name: 'Hogwarts Express – Hogsmeade Station', park: 'islands-of-adventure', land: 'Hogsmeade', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in. Park-to-Park admission is required.' },
+  { name: 'Camp Jurassic', park: 'islands-of-adventure', land: 'Jurassic Park', minHeight: 0 },
+  { name: 'Pteranodon Flyers', park: 'islands-of-adventure', land: 'Jurassic Park', minHeight: 36, independentHeight: 48, maxHeight: 56, conditionalText: 'Tall enough with a supervising companion.', overMaxText: 'Guests over 56 in must ride with a child between 36 and 56 in.' },
+  { name: 'Jurassic Park Discovery Center', park: 'islands-of-adventure', land: 'Jurassic Park', minHeight: 0 },
+  { name: 'Jurassic Park River Adventure', park: 'islands-of-adventure', land: 'Jurassic Park', minHeight: 42, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Jurassic World VelociCoaster', park: 'islands-of-adventure', land: 'Jurassic Park', minHeight: 51 },
+  { name: 'Skull Island: Reign of Kong', park: 'islands-of-adventure', land: 'Skull Island', minHeight: 36, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Me Ship, The Olive', park: 'islands-of-adventure', land: 'Toon Lagoon', minHeight: 0 },
+  { name: 'Popeye & Bluto’s Bilge-Rat Barges', park: 'islands-of-adventure', land: 'Toon Lagoon', minHeight: 42, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Dudley Do-Right’s Ripsaw Falls', park: 'islands-of-adventure', land: 'Toon Lagoon', minHeight: 44, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'The Incredible Hulk Coaster', park: 'islands-of-adventure', land: 'Marvel Super Hero Island', minHeight: 54 },
+  { name: 'Storm Force Accelatron', park: 'islands-of-adventure', land: 'Marvel Super Hero Island', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in.' },
+  { name: 'Doctor Doom’s Fearfall', park: 'islands-of-adventure', land: 'Marvel Super Hero Island', minHeight: 52 },
+  { name: 'The Amazing Adventures of Spider-Man', park: 'islands-of-adventure', land: 'Marvel Super Hero Island', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+
+  // Universal Epic Universe
+  { name: 'Astronomica', park: 'epic-universe', land: 'Celestial Park', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in.' },
+  { name: 'Constellation Carousel', park: 'epic-universe', land: 'Celestial Park', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in. No hand-held infants.' },
+  { name: 'Stardust Racers', park: 'epic-universe', land: 'Celestial Park', minHeight: 48 },
+  { name: 'Dragon Racer’s Rally', park: 'epic-universe', land: 'How to Train Your Dragon – Isle of Berk', minHeight: 48 },
+  { name: 'Fyre Drill', park: 'epic-universe', land: 'How to Train Your Dragon – Isle of Berk', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in. No hand-held infants.' },
+  { name: 'Hiccup’s Wing Gliders', park: 'epic-universe', land: 'How to Train Your Dragon – Isle of Berk', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'The Untrainable Dragon', park: 'epic-universe', land: 'How to Train Your Dragon – Isle of Berk', minHeight: 0 },
+  { name: 'Viking Training Camp', park: 'epic-universe', land: 'How to Train Your Dragon – Isle of Berk', minHeight: 0, independentHeight: 48, conditionalText: 'Children under 48 in should be accompanied by a supervising companion.' },
+  { name: 'Harry Potter and the Battle at the Ministry', park: 'epic-universe', land: 'The Wizarding World of Harry Potter – Ministry of Magic', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Le Cirque Arcanus', park: 'epic-universe', land: 'The Wizarding World of Harry Potter – Ministry of Magic', minHeight: 0 },
+  { name: 'Curse of the Werewolf', park: 'epic-universe', land: 'Dark Universe', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Monsters Unchained: The Frankenstein Experiment', park: 'epic-universe', land: 'Dark Universe', minHeight: 48 },
+  { name: 'Mario Kart: Bowser’s Challenge', park: 'epic-universe', land: 'SUPER NINTENDO WORLD', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Mine-Cart Madness', park: 'epic-universe', land: 'SUPER NINTENDO WORLD', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Yoshi’s Adventure', park: 'epic-universe', land: 'SUPER NINTENDO WORLD', minHeight: 34, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' }
+
 ];
