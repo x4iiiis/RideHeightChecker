@@ -46,7 +46,7 @@ export const parks = {
   },
   'busch-gardens-tampa': {
     name: 'Busch Gardens Tampa Bay',
-    shortName: 'Busch Gardens Tampa',
+    shortName: 'Busch Gardens Tampa Bay',
     resort: 'seaworld'
   }
 };

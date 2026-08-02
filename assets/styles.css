@@ -135,17 +135,15 @@ legend { width: 100%; margin-bottom: 16px; font-weight: 800; }
 
 .park-filter {
   display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  padding: 4px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 14px;
+  padding: 10px;
   border: 1px solid var(--line);
   background: var(--surface);
   border-radius: 13px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
-.park-filter::-webkit-scrollbar { display: none; }
-.park-button { flex: 0 0 auto; white-space: nowrap; }
+.park-button { white-space: nowrap; }
 .park-button.is-active { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(79,70,229,.24); }
 .control-group-wide { min-width: 0; }
 
@@ -264,7 +262,6 @@ legend { width: 100%; margin-bottom: 16px; font-weight: 800; }
 .footer-disclaimer { margin-top: 0; padding: 0 0 22px; text-align: center; color: var(--muted); font-size: .78rem; }
 @media (max-width: 760px) {
   .brand span { max-width: 210px; line-height: 1.05; }
-  .park-filter { margin-inline: -2px; }
   .park-button { padding: 10px 13px; }
 }
 
@@ -296,13 +293,41 @@ legend { width: 100%; margin-bottom: 16px; font-weight: 800; }
 
 
 /* Resort-grouped park navigation */
-.park-filter { align-items: flex-end; }
-.resort-filter-group { flex: 0 0 auto; display: grid; gap: 5px; }
-.resort-filter-label { padding-left: 4px; color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.resort-filter-buttons { display: flex; gap: 5px; }
+.resort-filter-group {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.resort-filter-label {
+  padding-left: 4px;
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.resort-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
 @media (max-width: 700px) {
-  .park-filter { align-items: flex-end; }
-  .resort-filter-group { gap: 4px; }
+  .park-filter {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+  .park-filter > .park-button {
+    justify-self: start;
+  }
+  .resort-filter-group {
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+  .resort-filter-group:first-of-type {
+    padding-top: 0;
+    border-top: 0;
+  }
   .resort-filter-label { font-size: .62rem; }
 }
 

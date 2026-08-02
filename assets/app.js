@@ -79,6 +79,8 @@ function readUrl() {
   const unit = params.get('unit');
   const height = Number.parseFloat(params.get('height'));
   const childName = cleanName(params.get('name') || localStorage.getItem('rideHeightChildName') || '');
+  const savedHeight = Number.parseFloat(localStorage.getItem('rideHeightInches'));
+  const savedUnit = localStorage.getItem('rideHeightUnit');
   const defaultPark = document.body.dataset.defaultPark;
 
   // The static route is authoritative: /animal-kingdom/ must always open
@@ -86,8 +88,17 @@ function readUrl() {
   if (parks[defaultPark]) {
     state.park = defaultPark;
   }
-  if (unit === 'cm' || unit === 'in') state.unit = unit;
-  if (Number.isFinite(height) && height >= 0) state.heightInches = height;
+  if (unit === 'cm' || unit === 'in') {
+    state.unit = unit;
+  } else if (savedUnit === 'cm' || savedUnit === 'in') {
+    state.unit = savedUnit;
+  }
+
+  if (Number.isFinite(height) && height >= 0) {
+    state.heightInches = height;
+  } else if (Number.isFinite(savedHeight) && savedHeight >= 0) {
+    state.heightInches = savedHeight;
+  }
   state.childName = childName;
 }
 
@@ -352,6 +363,7 @@ elements.nameInput.addEventListener('input', event => {
 });
 elements.input.addEventListener('input', event => {
   state.heightInches = parseHeight(event.target.value);
+  localStorage.setItem('rideHeightInches', String(state.heightInches));
   updateUrl();
   render();
 });
@@ -359,6 +371,7 @@ elements.input.addEventListener('input', event => {
 elements.unitButtons.forEach(button => {
   button.addEventListener('click', () => {
     state.unit = button.dataset.unit;
+    localStorage.setItem('rideHeightUnit', state.unit);
     syncUnitControls();
     updateUrl();
     render();
