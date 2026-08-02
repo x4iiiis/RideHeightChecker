@@ -44,12 +44,27 @@ function parseHeight(value) {
   return state.unit === 'in' ? number : cmToInches(number);
 }
 
+function isOverMaximum(ride) {
+  if (!Number.isFinite(ride.maxHeight)) return false;
+
+  return ride.maxHeightExclusive
+    ? state.heightInches >= ride.maxHeight
+    : state.heightInches > ride.maxHeight;
+}
+
 function statusFor(ride) {
-  if (ride.maxHeight && state.heightInches > ride.maxHeight) return 'conditional';
+  if (isOverMaximum(ride)) {
+    return ride.overMaxStatus || 'restricted';
+  }
+
   if (state.heightInches < ride.minHeight) {
     return ride.underMinimumAlternative ? 'conditional' : 'restricted';
   }
-  if (ride.independentHeight && state.heightInches < ride.independentHeight) return 'conditional';
+
+  if (ride.independentHeight && state.heightInches < ride.independentHeight) {
+    return 'conditional';
+  }
+
   return 'available';
 }
 
@@ -128,9 +143,40 @@ function updateMetadata(activePark) {
 }
 
 function formatRule(ride) {
-  if (ride.minHeight === 0) return 'Any height';
-  if (ride.independentHeight) return ride.independentRule || `${ride.minHeight === 0 ? 'Any height' : `${ride.minHeight} in minimum`} · ${ride.independentHeight} in to ride alone`;
-  return `${ride.minHeight} in minimum`;
+  if (ride.ruleText) return ride.ruleText;
+
+  const minimum = ride.minHeight > 0 ? `${ride.minHeight} in minimum` : null;
+  const maximum = Number.isFinite(ride.maxHeight)
+    ? ride.maxHeightExclusive
+      ? `under ${ride.maxHeight} in`
+      : `${ride.maxHeight} in maximum`
+    : null;
+
+  let rule;
+
+  if (minimum && maximum) {
+    rule = ride.maxHeightExclusive
+      ? `${minimum} · ${maximum}`
+      : `${ride.minHeight}–${ride.maxHeight} in`;
+  } else if (minimum) {
+    rule = minimum;
+  } else if (maximum) {
+    rule = maximum;
+  } else {
+    rule = 'Any height';
+  }
+
+  if (ride.independentHeight) {
+    rule += ` · ${ride.independentHeight} in to ride alone`;
+  }
+
+  return rule;
+}
+
+function hasHeightRule(ride) {
+  return ride.minHeight > 0 ||
+    Number.isFinite(ride.maxHeight) ||
+    Number.isFinite(ride.independentHeight);
 }
 
 function localDateIso(date = new Date()) {
@@ -165,15 +211,29 @@ function retirementMessage(ride) {
 
 function formatDetail(ride, status) {
   if (status === 'available') {
+    if (Number.isFinite(ride.maxHeight) && ride.minHeight === 0) {
+      return ride.withinRangeText || 'Within the permitted height range.';
+    }
+
+    if (ride.independentHeight) {
+      return ride.independentSuccessText || 'Tall enough to ride without a supervising companion.';
+    }
+
     if (ride.minHeight === 0) return 'No minimum height requirement.';
-    if (ride.independentHeight) return ride.independentSuccessText || 'Tall enough to ride without a supervising companion.';
+
     return `Meets the requirement by ${rounded(state.heightInches - ride.minHeight)} in.`;
   }
+
   if (status === 'conditional') {
-    if (ride.maxHeight && state.heightInches > ride.maxHeight) return ride.overMaxText;
-    if (state.heightInches < ride.minHeight && ride.underMinimumAlternative) return ride.underMinimumAlternative;
+    if (isOverMaximum(ride)) return ride.overMaxText;
+    if (state.heightInches < ride.minHeight && ride.underMinimumAlternative) {
+      return ride.underMinimumAlternative;
+    }
     return ride.conditionalText;
   }
+
+  if (isOverMaximum(ride)) return ride.overMaxText;
+
   return `${rounded(ride.minHeight - state.heightInches)} in to go.`;
 }
 
@@ -222,7 +282,7 @@ function render() {
   elements.nextHeight.textContent = nextThreshold ? `${nextThreshold} in` : 'All clear';
 
   const visible = statuses.filter(({ ride, status }) => {
-    if (state.requirementsOnly && ride.minHeight === 0) return false;
+    if (state.requirementsOnly && !hasHeightRule(ride)) return false;
     if (state.filter === 'available' && status === 'restricted') return false;
     if (state.filter === 'restricted' && status !== 'restricted') return false;
     return true;
