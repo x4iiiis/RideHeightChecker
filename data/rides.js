@@ -38,6 +38,11 @@ export const parks = {
     name: 'Universal Epic Universe',
     shortName: 'Epic Universe',
     resort: 'universal'
+  },
+  'seaworld-orlando': {
+    name: 'SeaWorld Orlando',
+    shortName: 'SeaWorld Orlando',
+    resort: 'seaworld'
   }
 };
 
@@ -199,6 +204,7 @@ export const rides = [
     land: 'Tomorrowland',
     minHeight: 32,
     independentHeight: 54,
+    independentRule: '32 in minimum · 54 in to drive alone',
     conditionalText: 'Can ride with a driver who is at least 54 in tall.'
   },
   {
@@ -606,6 +612,25 @@ export const rides = [
   { name: 'Monsters Unchained: The Frankenstein Experiment', park: 'epic-universe', land: 'Dark Universe', minHeight: 48 },
   { name: 'Mario Kart: Bowser’s Challenge', park: 'epic-universe', land: 'SUPER NINTENDO WORLD', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
   { name: 'Mine-Cart Madness', park: 'epic-universe', land: 'SUPER NINTENDO WORLD', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
-  { name: 'Yoshi’s Adventure', park: 'epic-universe', land: 'SUPER NINTENDO WORLD', minHeight: 34, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' }
+  { name: 'Yoshi’s Adventure', park: 'epic-universe', land: 'SUPER NINTENDO WORLD', minHeight: 34, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+
+  // SeaWorld Orlando — verified against the May 2026 official accessibility guide
+  { name: 'Abby’s Flower Tower', park: 'seaworld-orlando', land: 'Sesame Street Land', minHeight: 0, independentHeight: 42, conditionalText: 'Requires a supervising companion under 42 in. No hand-held infants.' },
+  { name: 'Cookie Drop', park: 'seaworld-orlando', land: 'Sesame Street Land', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in. No hand-held infants.' },
+  { name: 'Elmo’s Choo Choo Train', park: 'seaworld-orlando', land: 'Sesame Street Land', minHeight: 0, independentHeight: 36, conditionalText: 'Requires a supervising companion under 36 in. No hand-held infants.' },
+  { name: 'Expedition Odyssey: Fire & Ice', park: 'seaworld-orlando', land: 'Wild Arctic', minHeight: 39, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Ice Breaker', park: 'seaworld-orlando', land: 'Wild Arctic', minHeight: 48, independentHeight: 54, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Infinity Falls', park: 'seaworld-orlando', land: 'Sea of Mystery', minHeight: 42, independentHeight: 48, maxHeight: 77, conditionalText: 'Tall enough with a supervising companion.', overMaxText: 'Guests over 77 in may not ride.' },
+  { name: 'Journey to Atlantis', park: 'seaworld-orlando', land: 'Atlantis', minHeight: 42, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Kraken', park: 'seaworld-orlando', land: 'Kraken Plaza', minHeight: 54 },
+  { name: 'Mako', park: 'seaworld-orlando', land: 'Shark Wreck Reef', minHeight: 54 },
+  { name: 'Manta', park: 'seaworld-orlando', land: 'Sea of Shallows', minHeight: 54 },
+  { name: 'Flamingo Paddle Boats', park: 'seaworld-orlando', land: 'Central Lagoon', minHeight: 0, independentHeight: 56, conditionalText: 'Requires a supervising companion under 56 in. No hand-held infants.' },
+  { name: 'Penguin Trek', park: 'seaworld-orlando', land: 'Antarctica', minHeight: 42, independentHeight: 51, maxHeight: 78, conditionalText: 'Tall enough with a supervising companion seated beside them.', overMaxText: 'Guests over 78 in may not ride.' },
+  { name: 'Pipeline: The Surf Coaster', park: 'seaworld-orlando', land: 'Surf Zone', minHeight: 54, maxHeight: 78, overMaxText: 'Guests over 78 in may not ride.' },
+  { name: 'Sky Tower', park: 'seaworld-orlando', land: 'Central Lagoon', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in.' },
+  { name: 'Slimey’s Sliders', park: 'seaworld-orlando', land: 'Sesame Street Land', minHeight: 0, independentHeight: 42, conditionalText: 'Requires a supervising companion under 42 in. No hand-held infants.' },
+  { name: 'Sunny Day Carousel', park: 'seaworld-orlando', land: 'Sesame Street Land', minHeight: 0, independentHeight: 42, conditionalText: 'Requires a supervising companion under 42 in. Hand-held infants may use a bench seat with a supervising companion.' },
+  { name: 'Super Grover’s Box Car Derby', park: 'seaworld-orlando', land: 'Sesame Street Land', minHeight: 38, independentHeight: 41, conditionalText: 'Tall enough with a supervising companion.' }
 
 ];

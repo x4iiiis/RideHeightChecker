@@ -28,4 +28,10 @@
 <url><loc>https://x4iiiis.github.io/RideHeightChecker/universal-studios/</loc></url>
 <url><loc>https://x4iiiis.github.io/RideHeightChecker/islands-of-adventure/</loc></url>
 <url><loc>https://x4iiiis.github.io/RideHeightChecker/epic-universe/</loc></url>
+
+  <url>
+    <loc>https://x4iiiis.github.io/RideHeightChecker/seaworld-orlando/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

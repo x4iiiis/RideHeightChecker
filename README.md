@@ -35,3 +35,5 @@ The park controls navigate between these crawlable pages while preserving the en
 
 ## Universal Orlando data
 Universal Studios Florida, Islands of Adventure and Epic Universe were added using Universal Orlando’s official ride-height page and current rider safety guides, checked 2 August 2026.
+
+- SeaWorld Orlando
