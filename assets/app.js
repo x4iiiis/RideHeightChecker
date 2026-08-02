@@ -122,6 +122,36 @@ function formatRule(ride) {
   return `${ride.minHeight} in minimum`;
 }
 
+function localDateIso(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function isRideActive(ride) {
+  if (ride.opens && localDateIso() < ride.opens) return false;
+  if (ride.closes && localDateIso() > ride.closes) return false;
+  return true;
+}
+
+function formatLifecycleDate(dateString) {
+  const [year, month, day] = dateString.split('-').map(Number);
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  }).format(new Date(year, month - 1, day));
+}
+
+function retirementMessage(ride) {
+  if (ride.lifecycle !== 'retiring' || !ride.closes) return '';
+
+  return localDateIso() === ride.closes
+    ? `Final operating day: ${formatLifecycleDate(ride.closes)}.`
+    : `Retiring after ${formatLifecycleDate(ride.closes)}.`;
+}
+
 function formatDetail(ride, status) {
   if (status === 'available') {
     if (ride.minHeight === 0) return 'No minimum height requirement.';
@@ -139,9 +169,10 @@ function formatDetail(ride, status) {
 function render() {
   elements.list.replaceChildren();
 
-  const parkRides = state.park === 'all'
+  const parkRides = (state.park === 'all'
       ? rides
-      : rides.filter(ride => ride.park === state.park);
+      : rides.filter(ride => ride.park === state.park)
+  ).filter(isRideActive);
 
   const statuses = parkRides.map(ride => ({
     ride,
@@ -195,7 +226,8 @@ function render() {
       'universal-studios',
       'islands-of-adventure',
       'epic-universe',
-      'seaworld-orlando'
+      'seaworld-orlando',
+      'busch-gardens-tampa'
     ];
 
     visible.sort((a, b) => {
@@ -267,8 +299,19 @@ function render() {
     fragment.querySelector('.ride-name').textContent = ride.name;
     fragment.querySelector('.land-badge').textContent = ride.land;
     fragment.querySelector('.ride-rule').textContent = formatRule(ride);
-    fragment.querySelector('.ride-detail').textContent =
-        formatDetail(ride, status);
+
+    const detail = fragment.querySelector('.ride-detail');
+    const lifecycleMessage = retirementMessage(ride);
+    detail.textContent = [formatDetail(ride, status), lifecycleMessage]
+        .filter(Boolean)
+        .join(' ');
+
+    if (lifecycleMessage) {
+      const retirementBadge = document.createElement('span');
+      retirementBadge.className = 'retirement-badge';
+      retirementBadge.textContent = 'Retiring';
+      fragment.querySelector('.ride-title-row').append(retirementBadge);
+    }
 
     elements.list.append(fragment);
   });
@@ -323,7 +366,7 @@ elements.unitButtons.forEach(button => {
 });
 
 function siteBasePath() {
-  const knownSlugs = ['magic-kingdom', 'epcot', 'hollywood-studios', 'animal-kingdom', 'universal-studios', 'islands-of-adventure', 'epic-universe', 'seaworld-orlando'];
+  const knownSlugs = ['magic-kingdom', 'epcot', 'hollywood-studios', 'animal-kingdom', 'universal-studios', 'islands-of-adventure', 'epic-universe', 'seaworld-orlando', 'busch-gardens-tampa'];
   const parts = window.location.pathname.split('/').filter(Boolean);
 
   if (knownSlugs.includes(parts.at(-1))) {

@@ -43,6 +43,11 @@ export const parks = {
     name: 'SeaWorld Orlando',
     shortName: 'SeaWorld Orlando',
     resort: 'seaworld'
+  },
+  'busch-gardens-tampa': {
+    name: 'Busch Gardens Tampa Bay',
+    shortName: 'Busch Gardens Tampa',
+    resort: 'seaworld'
   }
 };
 
@@ -632,5 +637,32 @@ export const rides = [
   { name: 'Slimey’s Sliders', park: 'seaworld-orlando', land: 'Sesame Street Land', minHeight: 0, independentHeight: 42, conditionalText: 'Requires a supervising companion under 42 in. No hand-held infants.' },
   { name: 'Sunny Day Carousel', park: 'seaworld-orlando', land: 'Sesame Street Land', minHeight: 0, independentHeight: 42, conditionalText: 'Requires a supervising companion under 42 in. Hand-held infants may use a bench seat with a supervising companion.' },
   { name: 'Super Grover’s Box Car Derby', park: 'seaworld-orlando', land: 'Sesame Street Land', minHeight: 38, independentHeight: 41, conditionalText: 'Tall enough with a supervising companion.' }
+,
+
+  // Busch Gardens Tampa Bay — verified against official accessibility guidance and current attraction pages
+  { name: 'Air Grover', park: 'busch-gardens-tampa', land: 'Sesame Street Safari of Fun', minHeight: 38, independentHeight: 41, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Big Bird’s Whirly Ride', park: 'busch-gardens-tampa', land: 'Sesame Street Safari of Fun', minHeight: 0, independentHeight: 36, maxHeight: 56, conditionalText: 'Requires a supervising companion under 36 in. No hand-held infants.', overMaxText: 'Guests over 56 in may ride only when accompanying a child.' },
+  { name: 'Cheetah Hunt', park: 'busch-gardens-tampa', land: 'Edge of Africa', minHeight: 48 },
+  { name: 'Cobra’s Curse', park: 'busch-gardens-tampa', land: 'Egypt', minHeight: 42, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 14 or older.' },
+  { name: 'Congo River Rapids', park: 'busch-gardens-tampa', land: 'Congo', minHeight: 42 },
+  { name: 'The Count’s Zambezi Rally', park: 'busch-gardens-tampa', land: 'Sesame Street Safari of Fun', minHeight: 0, independentHeight: 36, maxHeight: 56, conditionalText: 'Requires a supervising companion under 36 in. No hand-held infants.', overMaxText: 'Guests over 56 in may ride only when accompanying a child.' },
+  { name: 'Elmo’s Safari Go-Round', park: 'busch-gardens-tampa', land: 'Sesame Street Safari of Fun', minHeight: 0, maxHeight: 56, overMaxText: 'Guests over 56 in may ride only when accompanying a child under 36 in.' },
+  { name: 'Falcon’s Fury', park: 'busch-gardens-tampa', land: 'Pantopia', minHeight: 54, maxHeight: 77, overMaxText: 'Guests over 77 in may not ride.' },
+  { name: 'Grand Caravan Carousel', park: 'busch-gardens-tampa', land: 'Pantopia', minHeight: 0, independentHeight: 42, conditionalText: 'Requires a supervising companion under 42 in; younger riders use designated rows or bench seating.' },
+  { name: 'Gwazi Gliders', park: 'busch-gardens-tampa', land: 'Jungala', minHeight: 0, maxHeight: 56, overMaxText: 'Guests 56 in or taller may not ride.' },
+  { name: 'Iron Gwazi', park: 'busch-gardens-tampa', land: 'Morocco', minHeight: 48 },
+  { name: 'Kumba', park: 'busch-gardens-tampa', land: 'Congo', minHeight: 54, lifecycle: 'retiring', closes: '2026-08-02' },
+  { name: 'Montu', park: 'busch-gardens-tampa', land: 'Egypt', minHeight: 54 },
+  { name: 'Phoenix Rising', park: 'busch-gardens-tampa', land: 'Pantopia', minHeight: 42, independentHeight: 48, maxHeight: 77, conditionalText: 'Tall enough with a supervising adult seated beside them.', overMaxText: 'Guests over 77 in may not ride.' },
+  { name: 'Rosita’s Djembe Fly-Away', park: 'busch-gardens-tampa', land: 'Sesame Street Safari of Fun', minHeight: 54 },
+  { name: 'Serengeti Express', park: 'busch-gardens-tampa', land: 'Serengeti Plain', minHeight: 0 },
+  { name: 'Serengeti Flyer', park: 'busch-gardens-tampa', land: 'Serengeti Plain', minHeight: 48 },
+  { name: 'SheiKra', park: 'busch-gardens-tampa', land: 'Stanleyville', minHeight: 54 },
+  { name: 'SkyRide', park: 'busch-gardens-tampa', land: 'Multiple areas', minHeight: 0, independentHeight: 56, conditionalText: 'Requires a supervising companion under 56 in.' },
+  { name: 'Snuffy’s Elephant Romp', park: 'busch-gardens-tampa', land: 'Sesame Street Safari of Fun', minHeight: 0, independentHeight: 36, maxHeight: 56, conditionalText: 'Requires a supervising companion under 36 in. No hand-held infants.', overMaxText: 'Guests over 56 in may ride only when accompanying a child.' },
+  { name: 'Tigris', park: 'busch-gardens-tampa', land: 'Stanleyville', minHeight: 54 },
+  { name: 'Treetop Drop', park: 'busch-gardens-tampa', land: 'Jungala', minHeight: 38, independentHeight: 42, conditionalText: 'Tall enough with a supervising companion aged 14 or older.' },
+  { name: 'Ubanga-Banga Bumper Cars', park: 'busch-gardens-tampa', land: 'Congo', minHeight: 42, independentHeight: 52, conditionalText: 'Tall enough with a supervising companion.' },
+  { name: 'Zoe-Patra and the Hippos of the Nile', park: 'busch-gardens-tampa', land: 'Sesame Street Safari of Fun', minHeight: 36, maxHeight: 56, overMaxText: 'Guests over 56 in may not ride.' }
 
 ];

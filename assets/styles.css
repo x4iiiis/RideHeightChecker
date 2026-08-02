@@ -305,3 +305,15 @@ legend { width: 100%; margin-bottom: 16px; font-weight: 800; }
   .resort-filter-group { gap: 4px; }
   .resort-filter-label { font-size: .62rem; }
 }
+
+
+.retirement-badge {
+  border: 1px solid #f59e0b;
+  background: #fffbeb;
+  color: #92400e;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: .74rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
