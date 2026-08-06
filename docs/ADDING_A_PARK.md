@@ -37,6 +37,11 @@ In `data/rides.js`:
   Busch-family page) rather than starting from scratch — it keeps the
   `<base href="../">`, ad unit, JSON-LD shape, etc. consistent.
 - Set `data-default-park` on `<body>` to the new slug.
+- Add the new park slug to the `knownSlugs` array in
+  `assets/app.js` inside `siteBasePath()`. This allows JavaScript to
+  recognise the current park and replace its slug when navigating to
+  another park. If omitted, links can become nested (for example,
+  `/typhoon-lagoon/blizzard-beach/` instead of `/blizzard-beach/`).
 - Update the unique bits: `<title>`, meta description, canonical URL,
   og/twitter tags, JSON-LD `name`/`description`, `<h1>`, intro
   paragraph, and the `about-checker` section's prose. These are
@@ -47,7 +52,7 @@ In `data/rides.js`:
 
 From the repo root:
 
-```
+```sh
 npm run build
 ```
 
@@ -73,6 +78,10 @@ usually means step 3 was skipped or the copied template diverged.
   buttons show the same full set everywhere (a resort group should
   never be missing a sibling — that was a real bug once, see the
   SeaWorld/Busch Gardens nav fix).
+- From the new park page, click through to at least one other park and
+  confirm the URL replaces the current park slug rather than appending
+  to it (for example, `/typhoon-lagoon/` should navigate to
+  `/blizzard-beach/`, not `/typhoon-lagoon/blizzard-beach/`).
 - Confirm the new park's ride cards actually render in the static
   HTML (view-source, not just the live page) — search for
   `<div class="ride-list" id="ride-list">` and check it's non-empty.
