@@ -333,7 +333,21 @@ elements.unitButtons.forEach(button => {
 });
 
 function siteBasePath() {
-  const knownSlugs = ['magic-kingdom', 'epcot', 'hollywood-studios', 'animal-kingdom', 'universal-studios', 'islands-of-adventure', 'epic-universe', 'volcano-bay', 'seaworld-orlando', 'busch-gardens-tampa'];
+  const knownSlugs = [
+    'magic-kingdom',
+    'epcot',
+    'hollywood-studios',
+    'animal-kingdom',
+    'typhoon-lagoon',
+    'blizzard-beach',
+    'universal-studios',
+    'islands-of-adventure',
+    'epic-universe',
+    'volcano-bay',
+    'seaworld-orlando',
+    'busch-gardens-tampa'
+  ];
+
   const parts = window.location.pathname.split('/').filter(Boolean);
 
   if (knownSlugs.includes(parts.at(-1))) {
