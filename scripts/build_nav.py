@@ -36,6 +36,7 @@ PAGES = [
     "epcot",
     "hollywood-studios",
     "animal-kingdom",
+    "typhoon-lagoon",
     "universal-studios",
     "islands-of-adventure",
     "epic-universe",

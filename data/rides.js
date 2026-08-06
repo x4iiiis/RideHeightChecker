@@ -30,6 +30,11 @@ export const parks = {
     shortName: 'Animal Kingdom',
     resort: 'disney'
   },
+  'typhoon-lagoon': {
+    name: "Disney’s Typhoon Lagoon",
+    shortName: 'Typhoon Lagoon',
+    resort: 'disney'
+  },
   'universal-studios': {
     name: 'Universal Studios Florida',
     shortName: 'Universal Studios',
@@ -564,6 +569,21 @@ export const rides = [
     minHeight: 0
   }
 ,
+  // Disney's Typhoon Lagoon — verified against TouringPlans height-requirement guidance
+  { name: "Crush ’n’ Gusher", park: 'typhoon-lagoon', land: 'Mount Mayday', minHeight: 48 },
+  { name: 'Humunga Kowabunga', park: 'typhoon-lagoon', land: 'Mount Mayday', minHeight: 48 },
+  { name: 'Jib Jammer', park: 'typhoon-lagoon', land: 'Mount Mayday', minHeight: 0 },
+  { name: 'Stern Burner', park: 'typhoon-lagoon', land: 'Mount Mayday', minHeight: 0 },
+  { name: 'Rudder Buster', park: 'typhoon-lagoon', land: 'Mount Mayday', minHeight: 0 },
+  { name: 'Mayday Falls', park: 'typhoon-lagoon', land: 'Mount Mayday', minHeight: 0 },
+  { name: 'Keelhaul Falls', park: 'typhoon-lagoon', land: 'Mount Mayday', minHeight: 0 },
+  { name: 'Gang Plank Falls', park: 'typhoon-lagoon', land: 'Mount Mayday', minHeight: 0 },
+  { name: 'Miss Adventure Falls', park: 'typhoon-lagoon', land: 'Mount Mayday', minHeight: 0 },
+  { name: 'Typhoon Lagoon Surf Pool', park: 'typhoon-lagoon', land: 'Surf Pool', minHeight: 0 },
+  { name: 'Bay Slides', park: 'typhoon-lagoon', land: 'Surf Pool', minHeight: 0, maxHeight: 60, overMaxStatus: 'restricted', withinRangeText: 'Within the maximum height for this kids’ slide area.', overMaxText: 'Guests over 60 in may not use Bay Slides.' },
+  { name: 'Castaway Creek', park: 'typhoon-lagoon', land: 'Castaway Creek', minHeight: 0 },
+  { name: 'Ketchakiddee Creek', park: 'typhoon-lagoon', land: 'Ketchakiddee Creek', minHeight: 0, maxHeight: 48, overMaxStatus: 'restricted', withinRangeText: 'Within the maximum height for this kids’ area.', overMaxText: 'Guests over 48 in may not enter.' },
+
   // Universal Studios Florida
   { name: 'Despicable Me Minion Mayhem', park: 'universal-studios', land: 'Minion Land', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.', underMinimumAlternative: 'May experience the attraction from an adjacent stationary seat.' },
   { name: 'Illumination’s Villain-Con Minion Blast', park: 'universal-studios', land: 'Minion Land', minHeight: 0, independentHeight: 48, conditionalText: 'Requires a supervising companion under 48 in. No hand-held infants.' },
