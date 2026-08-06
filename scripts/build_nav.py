@@ -104,7 +104,11 @@ def render_park_filter(parks, groups, active_park):
     all_active = active_park == "all"
     parts = [
         '<div aria-label="Park filter" class="park-filter" role="group">'
+        '<div class="resort-filter-group">'
+        '<span class="resort-filter-label">All</span>'
+        '<div class="resort-filter-buttons">'
         + park_button("all", "All Parks", all_active)
+        + "</div></div>"
     ]
     for resort, slugs in groups.items():
         label = RESORT_LABELS[resort]
