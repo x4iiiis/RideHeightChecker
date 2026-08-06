@@ -1,3 +1,9 @@
+// Update this by hand whenever ride data has actually been re-checked
+// against official park sources -- not on every edit. scripts/build_rides.mjs
+// reads it and stamps "in <Month> <Year>" into the .verified paragraph on
+// every page, so it only needs to change in one place.
+export const dataVerifiedDate = '2026-08-01';
+
 export const parks = {
   all: {
     name: 'All Florida Parks',
