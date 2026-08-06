@@ -35,6 +35,11 @@ export const parks = {
     shortName: 'Typhoon Lagoon',
     resort: 'disney'
   },
+  'blizzard-beach': {
+    name: "Disney’s Blizzard Beach",
+    shortName: 'Blizzard Beach',
+    resort: 'disney'
+  },
   'universal-studios': {
     name: 'Universal Studios Florida',
     shortName: 'Universal Studios',
@@ -583,6 +588,20 @@ export const rides = [
   { name: 'Bay Slides', park: 'typhoon-lagoon', land: 'Surf Pool', minHeight: 0, maxHeight: 60, overMaxStatus: 'restricted', withinRangeText: 'Within the maximum height for this kids’ slide area.', overMaxText: 'Guests over 60 in may not use Bay Slides.' },
   { name: 'Castaway Creek', park: 'typhoon-lagoon', land: 'Castaway Creek', minHeight: 0 },
   { name: 'Ketchakiddee Creek', park: 'typhoon-lagoon', land: 'Ketchakiddee Creek', minHeight: 0, maxHeight: 48, overMaxStatus: 'restricted', withinRangeText: 'Within the maximum height for this kids’ area.', overMaxText: 'Guests over 48 in may not enter.' },
+
+  // Disney's Blizzard Beach — verified against TouringPlans height-requirement guidance
+  { name: 'Summit Plummet', park: 'blizzard-beach', land: 'Mount Gushmore', minHeight: 48 },
+  { name: 'Slush Gusher', park: 'blizzard-beach', land: 'Mount Gushmore', minHeight: 48 },
+  { name: 'Downhill Double Dipper', park: 'blizzard-beach', land: 'Mount Gushmore', minHeight: 48 },
+  { name: 'Chair Lift Up Mt. Gushmore', park: 'blizzard-beach', land: 'Mount Gushmore', minHeight: 32 },
+  { name: 'Teamboat Springs', park: 'blizzard-beach', land: 'Mount Gushmore', minHeight: 0 },
+  { name: 'Toboggan Racers', park: 'blizzard-beach', land: 'Mount Gushmore', minHeight: 0 },
+  { name: 'Snow Stormers', park: 'blizzard-beach', land: 'Mount Gushmore', minHeight: 0 },
+  { name: 'Runoff Rapids', park: 'blizzard-beach', land: 'Mount Gushmore', minHeight: 0 },
+  { name: 'Cross Country Creek', park: 'blizzard-beach', land: 'Cross Country Creek', minHeight: 0 },
+  { name: 'Melt-Away Bay', park: 'blizzard-beach', land: 'Melt-Away Bay', minHeight: 0 },
+  { name: 'Ski Patrol Training Camp', park: 'blizzard-beach', land: "Tike’s Peak", minHeight: 0 },
+  { name: 'Tike’s Peak', park: 'blizzard-beach', land: "Tike’s Peak", minHeight: 0, maxHeight: 48, overMaxStatus: 'restricted', withinRangeText: 'Within the maximum height for this kids’ area.', overMaxText: 'Guests over 48 in may not enter.' },
 
   // Universal Studios Florida
   { name: 'Despicable Me Minion Mayhem', park: 'universal-studios', land: 'Minion Land', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion.', underMinimumAlternative: 'May experience the attraction from an adjacent stationary seat.' },

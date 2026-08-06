@@ -186,6 +186,7 @@ function render() {
       'hollywood-studios',
       'animal-kingdom',
       'typhoon-lagoon',
+      'blizzard-beach',
       'universal-studios',
       'islands-of-adventure',
       'epic-universe',
