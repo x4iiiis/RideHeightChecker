@@ -74,6 +74,11 @@ export const parks = {
     name: 'Aquatica Orlando',
     shortName: 'Aquatica Orlando',
     resort: 'seaworld'
+  },
+  'legoland-florida': {
+    name: 'LEGOLAND Florida',
+    shortName: 'LEGOLAND Florida',
+    resort: 'legoland'
   }
 };
 
@@ -759,5 +764,46 @@ export const rides = [
   { name: 'The Reef', park: 'volcano-bay', land: 'Wave Village', minHeight: 0, independentHeight: 48, conditionalText: 'Under 48 in must wear a life vest and be accompanied by a supervising companion.' },
   { name: 'Tot Tiki Reef', park: 'volcano-bay', land: 'Wave Village', minHeight: 0, maxHeight: 48, overMaxStatus: 'restricted', withinRangeText: 'Within the maximum height for this kids’ area.', overMaxText: 'Guests over 48 in may not enter.' },
   { name: 'Runamukka Reef', park: 'volcano-bay', land: 'Wave Village', minHeight: 0, maxHeight: 54, overMaxStatus: 'restricted', withinRangeText: 'Within the maximum height for this kids’ area.', overMaxText: 'Guests over 54 in may not enter.' }
+,
+
+  // LEGOLAND Florida (Theme Park) — verified against the official LEGOLAND Florida rides & attractions page, August 2026
+  { name: 'Galacticoaster', park: 'legoland-florida', land: 'LEGO® Galaxy', minHeight: 36, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 13 or older and 48 in or taller.' },
+  { name: 'Junior Astronaut Training Zone', park: 'legoland-florida', land: 'LEGO® Galaxy', minHeight: 0 },
+  { name: 'AQUAZONE® Wave Racers', park: 'legoland-florida', land: 'LEGO® Technic', minHeight: 40, independentHeight: 52, conditionalText: 'Tall enough with a supervising companion aged 14 or older in the same vehicle.' },
+  { name: 'Battle of Bricksburg', park: 'legoland-florida', land: 'THE LEGO® MOVIE World', minHeight: 0, independentHeight: 48, conditionalText: 'Under 48 in must ride with an adult.' },
+  { name: 'Beetle Bounce', park: 'legoland-florida', land: 'Land of Adventure', minHeight: 36 },
+  { name: 'Benny’s Play Ship', park: 'legoland-florida', land: 'THE LEGO® MOVIE World', minHeight: 0 },
+  { name: 'Cypress Botanical Gardens', park: 'legoland-florida', land: 'Cypress Gardens', minHeight: 0 },
+  { name: 'Coast Guard Academy', park: 'legoland-florida', land: 'LEGO® City', minHeight: 34, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 14 or older in the same boat.' },
+  { name: 'Coastersaurus', park: 'legoland-florida', land: 'Land of Adventure', minHeight: 42 },
+  { name: 'DUPLO® Valley Schoolhouse', park: 'legoland-florida', land: 'DUPLO® Valley', minHeight: 0 },
+  { name: 'DUPLO® Splash & Play', park: 'legoland-florida', land: 'DUPLO® Valley', minHeight: 0 },
+  { name: 'DUPLO® Tot Spot', park: 'legoland-florida', land: 'DUPLO® Valley', minHeight: 0 },
+  { name: 'DUPLO® Tractor', park: 'legoland-florida', land: 'DUPLO® Valley', minHeight: 0 },
+  { name: 'DUPLO® Train', park: 'legoland-florida', land: 'DUPLO® Valley', minHeight: 0, independentHeight: 34, conditionalText: 'Under 34 in must ride with a responsible person 48 in or taller.' },
+  { name: 'Driving School', park: 'legoland-florida', land: 'LEGO® City', minHeight: 0 },
+  { name: 'Jr. Driving School', park: 'legoland-florida', land: 'LEGO® City', minHeight: 0 },
+  { name: 'Heartlake Stepping Tones Fountain', park: 'legoland-florida', land: 'Heartlake City', minHeight: 0 },
+  { name: 'Imagination Zone', park: 'legoland-florida', land: 'Imagination Zone', minHeight: 0 },
+  { name: 'Kid Power Towers', park: 'legoland-florida', land: 'Imagination Zone', minHeight: 30, independentHeight: 42, conditionalText: 'Tall enough with a supervising companion aged 14 or older.' },
+  { name: 'LEGO® Ferrari Build & Race', park: 'legoland-florida', land: 'LEGO® Technic', minHeight: 0 },
+  { name: 'LEGO® NINJAGO® The Ride', park: 'legoland-florida', land: 'LEGO® NINJAGO® World', minHeight: 0, independentHeight: 48, conditionalText: 'Under 48 in must ride with a supervising companion 14 years or older and 48 in or taller.' },
+  { name: 'Lost Kingdom Adventure', park: 'legoland-florida', land: 'Land of Adventure', minHeight: 30, independentHeight: 42, conditionalText: 'Tall enough with a supervising companion aged 14 or older.' },
+  { name: 'Merlin’s Challenge', park: 'legoland-florida', land: 'LEGO® Kingdoms', minHeight: 36, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 14 or older.' },
+  { name: 'Mia’s Riding Adventure', park: 'legoland-florida', land: 'Heartlake City', minHeight: 48 },
+  { name: 'MINILAND USA', park: 'legoland-florida', land: 'MINILAND USA', minHeight: 0 },
+  { name: 'Rescue Academy', park: 'legoland-florida', land: 'LEGO® City', minHeight: 34, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 14 or older in the same vehicle.' },
+  { name: 'Pharaoh’s Revenge', park: 'legoland-florida', land: 'Land of Adventure', minHeight: 0 },
+  { name: 'Pirate River Quest', park: 'legoland-florida', land: 'Pirates’ Cove', minHeight: 0 },
+  { name: 'Royal Joust', park: 'legoland-florida', land: 'LEGO® Kingdoms', minHeight: 36 },
+  { name: 'Safari Trek', park: 'legoland-florida', land: 'Land of Adventure', minHeight: 34, independentHeight: 44, conditionalText: 'Tall enough with a supervising companion aged 14 or older; independent riders must also be at least 6 years old.' },
+  { name: 'Technicycle', park: 'legoland-florida', land: 'LEGO® Technic', minHeight: 36, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 14 or older in the same ride unit.' },
+  { name: 'The Dragon', park: 'legoland-florida', land: 'LEGO® Kingdoms', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 14 or older.' },
+  { name: 'The Grand Carousel', park: 'legoland-florida', land: 'Fun Town', minHeight: 0 },
+  { name: 'The Great LEGO® Race', park: 'legoland-florida', land: 'LEGO® Technic', minHeight: 42, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 14 or older in the same vehicle.' },
+  { name: 'The Great LEGO® Race Virtual Reality Experience', park: 'legoland-florida', land: 'LEGO® Technic', minHeight: 35 },
+  { name: 'THE LEGO® MOVIE™ Masters of Flight', park: 'legoland-florida', land: 'THE LEGO® MOVIE World', minHeight: 40, independentHeight: 52, conditionalText: 'Tall enough with a supervising companion aged 14 or older and 52 in or taller, seated beside them.' },
+  { name: 'The LEGOLAND® Story', park: 'legoland-florida', land: 'The Beginning', minHeight: 0 },
+  { name: 'Unikitty’s Disco Drop', park: 'legoland-florida', land: 'THE LEGO® MOVIE World', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 14 or older and 48 in or taller.' }
 
 ];

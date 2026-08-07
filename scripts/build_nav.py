@@ -45,12 +45,14 @@ PAGES = [
     "seaworld-orlando",
     "busch-gardens-tampa",
     "aquatica-orlando",
+    "legoland-florida",
 ]
 
 RESORT_LABELS = {
     "disney": "Disney",
     "universal": "Universal",
     "seaworld": "SeaWorld",
+    "legoland": "LEGOLAND",
 }
 
 

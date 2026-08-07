@@ -53,7 +53,8 @@ const PAGES = [
   'volcano-bay',
   'seaworld-orlando',
   'busch-gardens-tampa',
-  'aquatica-orlando'
+  'aquatica-orlando',
+  'legoland-florida'
 ];
 
 // Must stay in sync with the `parkOrder` array in assets/app.js render().
@@ -70,7 +71,8 @@ const PARK_ORDER = [
   'volcano-bay',
   'seaworld-orlando',
   'busch-gardens-tampa',
-  'aquatica-orlando'
+  'aquatica-orlando',
+  'legoland-florida'
 ];
 
 const STATUS_ORDER = { available: 0, conditional: 1, restricted: 2 };

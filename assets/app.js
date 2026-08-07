@@ -193,7 +193,8 @@ function render() {
       'volcano-bay',
       'seaworld-orlando',
       'busch-gardens-tampa',
-      'aquatica-orlando'
+      'aquatica-orlando',
+      'legoland-florida'
     ];
 
     visible.sort((a, b) => {
@@ -347,7 +348,8 @@ function siteBasePath() {
     'volcano-bay',
     'seaworld-orlando',
     'busch-gardens-tampa',
-    'aquatica-orlando'
+    'aquatica-orlando',
+    'legoland-florida'
   ];
 
   const parts = window.location.pathname.split('/').filter(Boolean);
