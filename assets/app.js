@@ -192,7 +192,8 @@ function render() {
       'epic-universe',
       'volcano-bay',
       'seaworld-orlando',
-      'busch-gardens-tampa'
+      'busch-gardens-tampa',
+      'aquatica-orlando'
     ];
 
     visible.sort((a, b) => {
@@ -345,7 +346,8 @@ function siteBasePath() {
     'epic-universe',
     'volcano-bay',
     'seaworld-orlando',
-    'busch-gardens-tampa'
+    'busch-gardens-tampa',
+    'aquatica-orlando'
   ];
 
   const parts = window.location.pathname.split('/').filter(Boolean);

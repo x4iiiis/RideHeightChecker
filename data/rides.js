@@ -69,6 +69,11 @@ export const parks = {
     name: 'Busch Gardens Tampa Bay',
     shortName: 'Busch Gardens Tampa Bay',
     resort: 'seaworld'
+  },
+  'aquatica-orlando': {
+    name: 'Aquatica Orlando',
+    shortName: 'Aquatica Orlando',
+    resort: 'seaworld'
   }
 };
 
@@ -714,6 +719,24 @@ export const rides = [
   { name: 'Treetop Drop', park: 'busch-gardens-tampa', land: 'Jungala', minHeight: 38, independentHeight: 42, conditionalText: 'Tall enough with a supervising companion aged 14 or older.' },
   { name: 'Ubanga-Banga Bumper Cars', park: 'busch-gardens-tampa', land: 'Congo', minHeight: 42, independentHeight: 52, conditionalText: 'Tall enough with a supervising companion.' },
   { name: 'Zoe-Patra and the Hippos of the Nile', park: 'busch-gardens-tampa', land: 'Sesame Street Safari of Fun', minHeight: 36, maxHeight: 56, overMaxStatus: 'restricted', overMaxText: 'Guests over 56 in may not ride. Hand-held infants may not ride.' }
+,
+
+  // Aquatica Orlando — verified against the official Aquatica Orlando rides page and FAQ, August 2026
+  { name: 'Riptide Race', park: 'aquatica-orlando', land: 'Thrill Slides', minHeight: 42 },
+  { name: 'Reef Plunge', park: 'aquatica-orlando', land: 'Thrill Slides', minHeight: 42 },
+  { name: 'KareKare Curl', park: 'aquatica-orlando', land: 'Thrill Slides', minHeight: 48 },
+  { name: 'Ihu’s Breakaway Falls', park: 'aquatica-orlando', land: 'Thrill Slides', minHeight: 48 },
+  { name: 'Taumata Racer', park: 'aquatica-orlando', land: 'Thrill Slides', minHeight: 42 },
+  { name: 'Omaka Rocka', park: 'aquatica-orlando', land: 'Thrill Slides', minHeight: 42 },
+  { name: 'Tassie’s Underwater Twist', park: 'aquatica-orlando', land: 'Family Slides', minHeight: 0, independentHeight: 48, conditionalText: 'Under 48 in must wear a life vest and be able to maintain proper riding position unassisted.' },
+  { name: 'Ray Rush', park: 'aquatica-orlando', land: 'Family Slides', minHeight: 42 },
+  { name: 'Walhalla Wave', park: 'aquatica-orlando', land: 'Family Slides', minHeight: 42 },
+  { name: 'Whanau Way', park: 'aquatica-orlando', land: 'Family Slides', minHeight: 0, independentHeight: 48, conditionalText: 'Under 48 in must wear a life vest and be able to maintain proper riding position unassisted in a double tube.' },
+  { name: 'Cutback Cove & Big Surf Shores', park: 'aquatica-orlando', land: 'Wave Pools', minHeight: 0 },
+  { name: 'Loggerhead Lane', park: 'aquatica-orlando', land: 'Rivers', minHeight: 0, independentHeight: 48, conditionalText: 'Guests under 48 in must wear a life vest.' },
+  { name: 'Roa’s Rapids', park: 'aquatica-orlando', land: 'Rivers', minHeight: 0, independentHeight: 51, conditionalText: 'Guests under 51 in are required to wear a life vest.' },
+  { name: 'Walkabout Waters', park: 'aquatica-orlando', land: 'Kids’ Areas', minHeight: 0 },
+  { name: 'Turi’s Kid Cove', park: 'aquatica-orlando', land: 'Kids’ Areas', minHeight: 0 }
 ,
 
   // Universal's Volcano Bay

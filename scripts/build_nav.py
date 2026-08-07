@@ -44,6 +44,7 @@ PAGES = [
     "volcano-bay",
     "seaworld-orlando",
     "busch-gardens-tampa",
+    "aquatica-orlando",
 ]
 
 RESORT_LABELS = {
