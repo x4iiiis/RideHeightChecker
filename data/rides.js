@@ -75,6 +75,11 @@ export const parks = {
     shortName: 'Aquatica Orlando',
     resort: 'seaworld'
   },
+  'adventure-island-tampa': {
+    name: 'Adventure Island Tampa Bay',
+    shortName: 'Adventure Island',
+    resort: 'seaworld'
+  },
   'legoland-florida': {
     name: 'LEGOLAND Florida',
     shortName: 'LEGOLAND Florida',
@@ -764,6 +769,24 @@ export const rides = [
   { name: 'The Reef', park: 'volcano-bay', land: 'Wave Village', minHeight: 0, independentHeight: 48, conditionalText: 'Under 48 in must wear a life vest and be accompanied by a supervising companion.' },
   { name: 'Tot Tiki Reef', park: 'volcano-bay', land: 'Wave Village', minHeight: 0, maxHeight: 48, overMaxStatus: 'restricted', withinRangeText: 'Within the maximum height for this kids’ area.', overMaxText: 'Guests over 48 in may not enter.' },
   { name: 'Runamukka Reef', park: 'volcano-bay', land: 'Wave Village', minHeight: 0, maxHeight: 54, overMaxStatus: 'restricted', withinRangeText: 'Within the maximum height for this kids’ area.', overMaxText: 'Guests over 54 in may not enter.' }
+,
+
+  // Adventure Island Tampa Bay — verified against the official Adventure Island rides, pools and kid-friendly pages, August 2026
+  { name: 'Aruba Tuba', park: 'adventure-island-tampa', land: 'Family Slides', minHeight: 42 },
+  { name: 'Rapids Racer', park: 'adventure-island-tampa', land: 'Family Slides', minHeight: 42 },
+  { name: 'Wahoo! Remix', park: 'adventure-island-tampa', land: 'Family Slides', minHeight: 42 },
+  { name: 'Solar Vortex', park: 'adventure-island-tampa', land: 'Family Slides', minHeight: 42 },
+  { name: 'Calypso Coaster', park: 'adventure-island-tampa', land: 'Family Slides', minHeight: 42 },
+  { name: 'Riptide', park: 'adventure-island-tampa', land: 'Family Slides', minHeight: 42 },
+  { name: 'Vanish Point', park: 'adventure-island-tampa', land: 'Thrill Slides', minHeight: 48 },
+  { name: 'Colossal Curl', park: 'adventure-island-tampa', land: 'Thrill Slides', minHeight: 48 },
+  { name: 'Caribbean Corkscrew', park: 'adventure-island-tampa', land: 'Thrill Slides', minHeight: 48 },
+  { name: 'Water Moccasin', park: 'adventure-island-tampa', land: 'Thrill Slides', minHeight: 48 },
+  { name: 'Endless Surf', park: 'adventure-island-tampa', land: 'Wave Pools', minHeight: 0 },
+  { name: 'Paradise Lagoon', park: 'adventure-island-tampa', land: 'Wave Pools', minHeight: 0 },
+  { name: 'Rambling Bayou', park: 'adventure-island-tampa', land: 'Rivers', minHeight: 0, independentHeight: 42, conditionalText: 'Guests under 42 in are recommended to wear a life vest.' },
+  { name: 'Castaway Falls', park: 'adventure-island-tampa', land: 'Kids’ Areas', minHeight: 0 },
+  { name: 'Shaka-Laka Shores', park: 'adventure-island-tampa', land: 'Kids’ Areas', minHeight: 0 }
 ,
 
   // LEGOLAND Florida (Theme Park) — verified against the official LEGOLAND Florida rides & attractions page, August 2026

@@ -54,6 +54,7 @@ const PAGES = [
   'seaworld-orlando',
   'busch-gardens-tampa',
   'aquatica-orlando',
+  'adventure-island-tampa',
   'legoland-florida'
 ];
 
@@ -72,6 +73,7 @@ const PARK_ORDER = [
   'seaworld-orlando',
   'busch-gardens-tampa',
   'aquatica-orlando',
+  'adventure-island-tampa',
   'legoland-florida'
 ];
 

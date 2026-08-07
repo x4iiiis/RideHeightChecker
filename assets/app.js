@@ -194,6 +194,7 @@ function render() {
       'seaworld-orlando',
       'busch-gardens-tampa',
       'aquatica-orlando',
+      'adventure-island-tampa',
       'legoland-florida'
     ];
 
@@ -349,6 +350,7 @@ function siteBasePath() {
     'seaworld-orlando',
     'busch-gardens-tampa',
     'aquatica-orlando',
+    'adventure-island-tampa',
     'legoland-florida'
   ];
 

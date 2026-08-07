@@ -45,6 +45,7 @@ PAGES = [
     "seaworld-orlando",
     "busch-gardens-tampa",
     "aquatica-orlando",
+    "adventure-island-tampa",
     "legoland-florida",
 ]
 
