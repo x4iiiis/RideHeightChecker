@@ -45,3 +45,5 @@ Universal Studios Florida, Islands of Adventure and Epic Universe were added usi
 - Adventure Island Tampa Bay static park page and verified ride-height dataset, checked against the official Adventure Island rides, pools and kid-friendly pages, August 2026. Completes the SeaWorld family's water-park coverage alongside Typhoon Lagoon/Blizzard Beach (Disney), Volcano Bay (Universal) and Aquatica Orlando.
 
 - LEGOLAND Florida static park page and verified ride-height dataset, checked against the official LEGOLAND Florida rides & attractions page, August 2026. First new resort family added to the site (`legoland` resort key alongside `disney`, `universal` and `seaworld`); covers the Theme Park only — LEGOLAND Water Park and Peppa Pig Theme Park are not yet included.
+
+- LEGOLAND Water Park static park page and verified ride-height dataset, checked against the official LEGOLAND Florida water park rides & attractions page, August 2026. Completes LEGOLAND Florida Resort's gate coverage alongside the Theme Park.

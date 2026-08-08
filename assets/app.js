@@ -195,7 +195,8 @@ function render() {
       'busch-gardens-tampa',
       'aquatica-orlando',
       'adventure-island-tampa',
-      'legoland-florida'
+      'legoland-florida',
+      'legoland-water-park'
     ];
 
     visible.sort((a, b) => {
@@ -351,7 +352,8 @@ function siteBasePath() {
     'busch-gardens-tampa',
     'aquatica-orlando',
     'adventure-island-tampa',
-    'legoland-florida'
+    'legoland-florida',
+    'legoland-water-park'
   ];
 
   const parts = window.location.pathname.split('/').filter(Boolean);

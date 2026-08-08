@@ -55,7 +55,8 @@ const PAGES = [
   'busch-gardens-tampa',
   'aquatica-orlando',
   'adventure-island-tampa',
-  'legoland-florida'
+  'legoland-florida',
+  'legoland-water-park'
 ];
 
 // Must stay in sync with the `parkOrder` array in assets/app.js render().
@@ -74,7 +75,8 @@ const PARK_ORDER = [
   'busch-gardens-tampa',
   'aquatica-orlando',
   'adventure-island-tampa',
-  'legoland-florida'
+  'legoland-florida',
+  'legoland-water-park'
 ];
 
 const STATUS_ORDER = { available: 0, conditional: 1, restricted: 2 };

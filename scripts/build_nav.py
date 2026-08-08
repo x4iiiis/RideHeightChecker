@@ -47,6 +47,7 @@ PAGES = [
     "aquatica-orlando",
     "adventure-island-tampa",
     "legoland-florida",
+    "legoland-water-park",
 ]
 
 RESORT_LABELS = {

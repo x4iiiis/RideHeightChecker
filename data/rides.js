@@ -84,6 +84,11 @@ export const parks = {
     name: 'LEGOLAND Florida',
     shortName: 'LEGOLAND Florida',
     resort: 'legoland'
+  },
+  'legoland-water-park': {
+    name: 'LEGOLAND Water Park',
+    shortName: 'LEGOLAND Water Park',
+    resort: 'legoland'
   }
 };
 
@@ -828,5 +833,15 @@ export const rides = [
   { name: 'THE LEGO® MOVIE™ Masters of Flight', park: 'legoland-florida', land: 'THE LEGO® MOVIE World', minHeight: 40, independentHeight: 52, conditionalText: 'Tall enough with a supervising companion aged 14 or older and 52 in or taller, seated beside them.' },
   { name: 'The LEGOLAND® Story', park: 'legoland-florida', land: 'The Beginning', minHeight: 0 },
   { name: 'Unikitty’s Disco Drop', park: 'legoland-florida', land: 'THE LEGO® MOVIE World', minHeight: 40, independentHeight: 48, conditionalText: 'Tall enough with a supervising companion aged 14 or older and 48 in or taller.' }
+,
+
+  // LEGOLAND Water Park — verified against the official LEGOLAND Florida water park rides & attractions page, August 2026
+  { name: 'Twin Chasers', park: 'legoland-water-park', land: 'Slides', minHeight: 42 },
+  { name: 'Splash Out', park: 'legoland-water-park', land: 'Slides', minHeight: 48 },
+  { name: 'Joker Soaker', park: 'legoland-water-park', land: 'Kids’ Areas', minHeight: 40 },
+  { name: 'Build-A-Boat', park: 'legoland-water-park', land: 'Kids’ Areas', minHeight: 0 },
+  { name: 'DUPLO® Splash Safari', park: 'legoland-water-park', land: 'Kids’ Areas', minHeight: 0 },
+  { name: 'Build-a-Raft Lazy River', park: 'legoland-water-park', land: 'Lazy River', minHeight: 0 },
+  { name: 'LEGO® Wave Pool', park: 'legoland-water-park', land: 'Wave Pool', minHeight: 0 }
 
 ];
