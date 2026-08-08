@@ -48,6 +48,7 @@ PAGES = [
     "adventure-island-tampa",
     "legoland-florida",
     "legoland-water-park",
+    "surfari-water-park",
 ]
 
 RESORT_LABELS = {
@@ -55,6 +56,7 @@ RESORT_LABELS = {
     "universal": "Universal",
     "seaworld": "SeaWorld",
     "legoland": "LEGOLAND",
+    "grove": "The Grove Resort",
 }
 
 

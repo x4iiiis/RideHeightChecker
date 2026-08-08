@@ -47,3 +47,5 @@ Universal Studios Florida, Islands of Adventure and Epic Universe were added usi
 - LEGOLAND Florida static park page and verified ride-height dataset, checked against the official LEGOLAND Florida rides & attractions page, August 2026. First new resort family added to the site (`legoland` resort key alongside `disney`, `universal` and `seaworld`); covers the Theme Park only — LEGOLAND Water Park and Peppa Pig Theme Park are not yet included.
 
 - LEGOLAND Water Park static park page and verified ride-height dataset, checked against the official LEGOLAND Florida water park rides & attractions page, August 2026. Completes LEGOLAND Florida Resort's gate coverage alongside the Theme Park.
+
+- Surfari Water Park (The Grove Resort & Water Park, Winter Garden) static park page and verified ride-height dataset, checked against the official Grove Resort water park pages and FAQ, August 2026. First new resort family that is a hotel amenity rather than a standalone admission-ticket park (`grove` resort key); access is free for hotel guests or via day pass rather than a park ticket.

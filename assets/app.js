@@ -196,7 +196,8 @@ function render() {
       'aquatica-orlando',
       'adventure-island-tampa',
       'legoland-florida',
-      'legoland-water-park'
+      'legoland-water-park',
+      'surfari-water-park'
     ];
 
     visible.sort((a, b) => {
@@ -353,7 +354,8 @@ function siteBasePath() {
     'aquatica-orlando',
     'adventure-island-tampa',
     'legoland-florida',
-    'legoland-water-park'
+    'legoland-water-park',
+    'surfari-water-park'
   ];
 
   const parts = window.location.pathname.split('/').filter(Boolean);

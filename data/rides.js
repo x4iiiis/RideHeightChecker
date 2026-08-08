@@ -89,6 +89,11 @@ export const parks = {
     name: 'LEGOLAND Water Park',
     shortName: 'LEGOLAND Water Park',
     resort: 'legoland'
+  },
+  'surfari-water-park': {
+    name: 'Surfari Water Park',
+    shortName: 'Surfari Water Park',
+    resort: 'grove'
   }
 };
 
@@ -843,5 +848,13 @@ export const rides = [
   { name: 'DUPLO® Splash Safari', park: 'legoland-water-park', land: 'Kids’ Areas', minHeight: 0 },
   { name: 'Build-a-Raft Lazy River', park: 'legoland-water-park', land: 'Lazy River', minHeight: 0 },
   { name: 'LEGO® Wave Pool', park: 'legoland-water-park', land: 'Wave Pool', minHeight: 0 }
+,
+
+  // Surfari Water Park (The Grove Resort & Water Park) — verified against the official Grove Resort water park pages and FAQ, August 2026
+  { name: 'Water Slides', park: 'surfari-water-park', land: 'Slides', minHeight: 48 },
+  { name: 'FlowRider® Double Surf Simulator', park: 'surfari-water-park', land: 'FlowRider', minHeight: 42, independentHeight: 48, conditionalText: 'Guests 42–47 in may ride lying down on a bodyboard; standing up to surf requires 48 in.' },
+  { name: 'Lazy River', park: 'surfari-water-park', land: 'Lazy River & Pools', minHeight: 0 },
+  { name: 'Zero-Entry Pool', park: 'surfari-water-park', land: 'Lazy River & Pools', minHeight: 0 },
+  { name: 'Kids’ Splash Pad', park: 'surfari-water-park', land: 'Kids’ Areas', minHeight: 0 }
 
 ];
