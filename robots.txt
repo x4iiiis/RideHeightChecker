@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://x4iiiis.github.io/RideHeightChecker/sitemap.xml
+Sitemap: https://tallenough.x4iiiis.com/sitemap.xml

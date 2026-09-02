@@ -8,12 +8,19 @@ Push the repository and enable **Settings → Pages → Deploy from a branch →
 
 ## AdSense
 
-The site includes an ad placeholder, privacy page, `ads.txt.example`, favicon set, manifest, Open Graph image, robots file and sitemap. Before enabling AdSense:
+The site is wired up for AdSense end to end:
 
-1. Add Google’s exact AdSense script and publisher ID.
-2. Rename `ads.txt.example` to `ads.txt` and insert Google’s supplied line.
-3. Update the privacy policy to match the services actually enabled.
-4. Add a consent mechanism where required.
+1. ✅ The AdSense library script and publisher ID (`ca-pub-1887186881075807`) are in every page's `<head>`, for site verification and Auto ads.
+2. ✅ `ads.txt` is live at the site root with Google's supplied line.
+3. ✅ `privacy.html` and `cookies.html` describe AdSense as enabled, not "may later use", and link out to Google's ad-settings and data-usage pages.
+4. ✅ A lightweight consent banner (`assets/styles.css` `.consent-banner`, inline script in every page's `<head>`) asks first-time visitors to accept ads or stay essential-only, and requests non-personalised ads by default until a visitor opts in — see the `adConsent` key in `localStorage`.
+5. ✅ The manual `<ins class="adsbygoogle">` ad slots (which all carried a placeholder `data-ad-slot` ID) have been removed. The publisher script alone is enough for site verification and for Google's Auto ads to place ads on its own; add manual `<ins>` slots back in only if you want ads pinned to specific positions instead of Auto ads deciding placement, once you've created real ad units in your AdSense account.
+
+Also worth knowing: every page's canonical URL, Open Graph/Twitter tags, JSON-LD and `sitemap.xml`/`robots.txt` now point at the live custom domain (`https://tallenough.x4iiiis.com/`, from `CNAME`) rather than the `x4iiiis.github.io/RideHeightChecker` GitHub Pages URL they used to carry — keep it that way if the domain ever changes, so Google isn't told two different canonical URLs for the same content.
+
+### Regression guard
+
+`scripts/check_regressions.mjs` runs as the last step of `npm run build` (after `build_nav.py` and `build_rides.mjs`). It doesn't rewrite anything — it fails the build if a known bad pattern reappears: the old GitHub Pages domain, a placeholder ad slot ID, a park page's results heading naming the wrong park, or a park page's editorial copy mentioning a ride that belongs to a different park (exactly the class of copy-paste bug that shipped in the version Google rejected — see `git log` / the AdSense hardening notes below for the specific instances it was written to catch). It reads `data/rides.js` as its source of truth, so it stays correct as parks and rides are added. Run it on its own with `node scripts/check_regressions.mjs`.
 
 ## Data
 

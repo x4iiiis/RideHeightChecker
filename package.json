@@ -4,6 +4,6 @@
   "type": "module",
   "description": "Build-time helper scripts only (see scripts/). The site itself is plain static HTML/CSS/JS with no build step required to serve it.",
   "scripts": {
-    "build": "python3 scripts/build_nav.py && node scripts/build_rides.mjs"
+    "build": "python3 scripts/build_nav.py && node scripts/build_rides.mjs && node scripts/check_regressions.mjs"
   }
 }

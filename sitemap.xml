@@ -1,54 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://x4iiiis.github.io/RideHeightChecker/</loc>
+    <loc>https://tallenough.x4iiiis.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://x4iiiis.github.io/RideHeightChecker/magic-kingdom/</loc>
+    <loc>https://tallenough.x4iiiis.com/magic-kingdom/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://x4iiiis.github.io/RideHeightChecker/epcot/</loc>
+    <loc>https://tallenough.x4iiiis.com/epcot/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://x4iiiis.github.io/RideHeightChecker/hollywood-studios/</loc>
+    <loc>https://tallenough.x4iiiis.com/hollywood-studios/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://x4iiiis.github.io/RideHeightChecker/animal-kingdom/</loc>
+    <loc>https://tallenough.x4iiiis.com/animal-kingdom/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://x4iiiis.github.io/RideHeightChecker/typhoon-lagoon/</loc>
+    <loc>https://tallenough.x4iiiis.com/typhoon-lagoon/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://x4iiiis.github.io/RideHeightChecker/blizzard-beach/</loc>
+    <loc>https://tallenough.x4iiiis.com/blizzard-beach/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-<url><loc>https://x4iiiis.github.io/RideHeightChecker/universal-studios/</loc></url>
-<url><loc>https://x4iiiis.github.io/RideHeightChecker/islands-of-adventure/</loc></url>
-<url><loc>https://x4iiiis.github.io/RideHeightChecker/epic-universe/</loc></url>
-<url><loc>https://x4iiiis.github.io/RideHeightChecker/volcano-bay/</loc></url>
+<url><loc>https://tallenough.x4iiiis.com/universal-studios/</loc></url>
+<url><loc>https://tallenough.x4iiiis.com/islands-of-adventure/</loc></url>
+<url><loc>https://tallenough.x4iiiis.com/epic-universe/</loc></url>
+<url><loc>https://tallenough.x4iiiis.com/volcano-bay/</loc></url>
 
   <url>
-    <loc>https://x4iiiis.github.io/RideHeightChecker/seaworld-orlando/</loc>
+    <loc>https://tallenough.x4iiiis.com/seaworld-orlando/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url><loc>https://x4iiiis.github.io/RideHeightChecker/busch-gardens-tampa/</loc></url>
-  <url><loc>https://x4iiiis.github.io/RideHeightChecker/aquatica-orlando/</loc></url>
-  <url><loc>https://x4iiiis.github.io/RideHeightChecker/adventure-island-tampa/</loc></url>
-  <url><loc>https://x4iiiis.github.io/RideHeightChecker/legoland-florida/</loc></url>
-  <url><loc>https://x4iiiis.github.io/RideHeightChecker/legoland-water-park/</loc></url>
-  <url><loc>https://x4iiiis.github.io/RideHeightChecker/surfari-water-park/</loc></url>
+  <url><loc>https://tallenough.x4iiiis.com/busch-gardens-tampa/</loc></url>
+  <url><loc>https://tallenough.x4iiiis.com/aquatica-orlando/</loc></url>
+  <url><loc>https://tallenough.x4iiiis.com/adventure-island-tampa/</loc></url>
+  <url><loc>https://tallenough.x4iiiis.com/legoland-florida/</loc></url>
+  <url><loc>https://tallenough.x4iiiis.com/legoland-water-park/</loc></url>
+  <url><loc>https://tallenough.x4iiiis.com/surfari-water-park/</loc></url>
+  <url><loc>https://tallenough.x4iiiis.com/about.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tallenough.x4iiiis.com/data-sources.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tallenough.x4iiiis.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://tallenough.x4iiiis.com/cookies.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>
